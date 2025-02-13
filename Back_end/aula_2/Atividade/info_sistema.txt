@@ -1,0 +1,5 @@
+plataforma: win32.
+arquitetura: x64
+cpu: [object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
+type: Windows_NT
+version: Windows 10 Education
