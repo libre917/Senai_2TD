@@ -58,6 +58,7 @@ input:placeholder{
 .navbar-icon{
     width: 300px;
     font-size: 24px;
+    margin-left: auto;
 }
 .navbar-icon *{
     margin-left: 10px;
@@ -81,6 +82,7 @@ input:placeholder{
 }
 
 /* main e section */
+
 .carousel-item.active, .carousel-item{
     display: flex;
     justify-content: center;
@@ -139,16 +141,43 @@ section, .carousel-inner{
     width: 1600px;
 }
 .carousel-control-prev, .carousel-control-next{
-    width: 7%;
+    width: 94px;
+    height: 94px;
+    top: 200px !important;
+    border: 1px solid white;
+    border-radius: 100%;
+    transition: 200ms;
+}
+.carousel-control-prev:hover, .carousel-control-next:hover, .carousel-control-next:focus, .carousel-control-prev:focus{
+    border: 1px solid #088178;
+    border-radius: 100%;
+}
+.carousel-control-prev:active, .carousel-control-next:active{
+    background-color: #088178;
 }
 .carousel-control-next-icon{
+    z-index: -7;
     background-image: url(../img/icone-seta-direita.png) !important;
 }
+.carousel-control-next:active .carousel-control-next-icon, .carousel-control-prev:active .carousel-control-prev-icon{
+    filter: brightness(1000%);
+}
 .carousel-control-prev-icon{
+    z-index: -7;
     background-image: url(../img/icone-seta-esquerda.png) !important;
 }
 .carousel-control-next-icon:active, .carousel-control-prev-icon:active{
  opacity: 0.5;
+}
+.carousel-indicators{
+    margin-bottom: 0px !important;
+}
+div .carousel-indicators .active{
+    background-color: #088178 !important;
+}
+.carousel-indicators button{
+    transition: 200ms;
+    border-bottom: 1px solid #088178 !important;
 }
 /* estilização dos cards, da seção "small-cards" */
 .col-sm-2, .col-sm-2 .card, .col-sm-2 .card .card-body{
@@ -179,3 +208,4 @@ height: 205px !important;
     height: 28px;
     color: #088178 ;
 }
+

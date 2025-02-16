@@ -10,6 +10,7 @@
     <title>Evara</title>
 </head>
 <body>
+    <!----------------------------------- Início do header/navbar ----------------------------------->
     <header>
         <nav class="navbar bg-body-tertiary">
                 <div class="navbar-buttons">
@@ -70,7 +71,6 @@
                               <li class="nav-item">
                                 <a class="nav-link" aria-disabled="true"><strong>About</strong></a>
                               </li>
-                              <li class="nav-item dropdown">
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     <strong>Shop</strong>
@@ -82,27 +82,29 @@
                                       <li><a class="dropdown-item" href="#">Something else here</a></li>
                                     </ul>
                                   </li>
-                              </li>
+                              <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 <strong>Mega menu</strong>
                                 </a>
                                 <ul class="dropdown-menu">
-                                  <li><a class="dropdown-item" href="#">Action</a></li>
+                                  <li><a class="dropdown-item" href="#">oi</a></li>
                                   <li><a class="dropdown-item" href="#">Another action</a></li>
                                   <li><hr class="dropdown-divider"></li>
                                   <li><a class="dropdown-item" href="#">Something else here</a></li>
                                 </ul>
                               </li>
+                              <li class="nav-item dropdown">
                               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 <strong>Blog</strong>
                                 </a>
                                 <ul class="dropdown-menu">
                                   <li><a class="dropdown-item" href="#">Action</a></li>
-                                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                                  <li><a class="dropdown-item" href="#">oi</a></li>
                                   <li><hr class="dropdown-divider"></li>
                                   <li><a class="dropdown-item" href="#">Something else here</a></li>
                                 </ul>
                               </li>
+                              <li class="nav-item dropdown">
                               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 <strong>Pages   </strong>
                                 </a>
@@ -133,8 +135,11 @@
             </div>
           </nav>
     </header>
+    <!----------------------------------- Fim do header/navbar ----------------------------------->
+  
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <main class="container">
+      <!----------------------------------- inicio section/carousel ----------------------------------->
      <section class="carousel">
       <div id="carouselExampleIndicators" class="carousel slide carousel-fade">
         <div class="carousel-indicators">
@@ -187,6 +192,8 @@
         </button>
       </div>
      </section>
+      <!----------------------------------- Fim section/carousel ----------------------------------->
+      <!----------------------------------- Início section/small-cards ----------------------------------->
      <section class="small-cards">
       <div class="row">
         <div class="col-sm-2 mb-3 mb-sm-0">
@@ -240,6 +247,70 @@
         
       </div>
      </section>
+      <!----------------------------------- Fim section/small-cards ----------------------------------->
+      <!----------------------------------- Início section/accordion ----------------------------------->
     </main>
+    <!-- depois analisa esta merda pra ve se precisa disso aq -->
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+          const buttons = document.querySelectorAll('.nav-button');
+          const collapses = document.querySelectorAll('.collapse');
+
+          buttons.forEach(button => {
+              button.addEventListener('click', () => {
+                  // Fecha todas as seções e remove a classe 'active' dos botões
+                  collapses.forEach(collapse => collapse.classList.remove('show'));
+                  buttons.forEach(btn => btn.classList.remove('active'));
+
+                  // Ativa o botão clicado e exibe a seção correspondente
+                  button.classList.add('active');
+                  const targetId = button.getAttribute('data-bs-target').substring(1);
+                  const targetContent = document.getElementById(targetId);
+                  targetContent.classList.add('show');
+              });
+          });
+      });
+  </script>
+ <script>
+  document.addEventListener('DOMContentLoaded', () => {
+  const accordionButtons = document.querySelectorAll('.accordion-button');
+
+  accordionButtons.forEach(button => {
+      button.addEventListener('click', () => {
+          // Remove a classe 'active' de todos os botões
+          accordionButtons.forEach(btn => btn.classList.remove('active'));
+
+          // Adiciona a classe 'active' ao botão clicado
+          button.classList.add('active');
+      });
+  });
+});
+
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const appsContentItems = document.querySelectorAll('.appsContent-items');
+
+  appsContentItems.forEach(item => {
+      item.addEventListener('click', () => {
+          // Remove a classe 'active' de todos os itens
+          appsContentItems.forEach(it => {
+              it.classList.remove('active');
+              const textElement = it.querySelector('.appsItem-Text');
+              if (textElement) {
+                  textElement.classList.remove('active');
+              }
+          });
+
+          // Adiciona a classe 'active' ao item clicado
+          item.classList.add('active');
+          const textElement = item.querySelector('.appsItem-Text');
+          if (textElement) {
+              textElement.classList.add('active');
+          }
+      });
+  });
+});
+</script>
 </body>
 </html>
