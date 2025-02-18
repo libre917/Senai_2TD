@@ -1,0 +1,30 @@
+{
+    "aplicacoes": [
+        { "App1": {
+            "nome_aplicacao": "Tinder",
+            "versao": "1.0.0",
+            "debug_mode": true,
+            "porta": 4590
+        }
+        },
+        { 
+            "App2":{
+            "nome_aplicacao": "Miro",
+            "versao": "12.4.2",
+            "debug_mode": true,
+            "porta": 2321}
+        },
+        {"App3":{
+            "nome_aplicacao": "Google",
+            "versao": "20.3.5",
+            "debug_mode": true,
+            "porta": 4444}
+        },
+        {"App4":{
+            "nome_aplicacao": "Gov.br",
+            "versao": "0.0.13",
+            "debug_mode": true,
+            "porta": 1313}
+        }
+    ]
+}
