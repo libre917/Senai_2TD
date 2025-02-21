@@ -82,33 +82,41 @@ input:placeholder{
 }
 
 /* main e section */
-
+main{
+    max-width: 1320px !important;
+    justify-content: center;
+}
+.carousel{
+    max-width: 1320px !important;
+    width: 1320px !important;
+}
 .carousel-item.active, .carousel-item{
     display: flex;
     justify-content: center;
     background-color: white;
     height: 520px;
     align-items: center;
+    padding: 42px;
 }
-.carousel-item img{
+.carousel-item .img{
     text-align: right;
-    width: 750px !important;
+    width: 65% !important;
   
 }
 .carousel-cardText{
     display: block;
-    width: 546px;
+    width: 45%;
 }
 .carousel-cardText h4{
-    font-size: 30px;
+    font-size: 18px;
     font-weight: 600;
 }
 .carousel-cardText h3{
-    font-size: 56px;
+    font-size: 44px;
     font-weight: 600;
 }
 .carousel-cardText h2{
-    font-size: 74px;
+    font-size: 62px;
     font-weight: 600;
 }
 .carousel-cardText button{
@@ -137,9 +145,7 @@ input:placeholder{
     display: grid;
     justify-content: center;
 }
-section, .carousel-inner{
-    width: 1600px;
-}
+
 .carousel-control-prev, .carousel-control-next{
     width: 94px;
     height: 94px;
@@ -147,6 +153,12 @@ section, .carousel-inner{
     border: 1px solid white;
     border-radius: 100%;
     transition: 200ms;
+}
+.carousel-control-prev{
+    left: -55px;
+}
+.carousel-control-next{
+    right: -55px;
 }
 .carousel-control-prev:hover, .carousel-control-next:hover, .carousel-control-next:focus, .carousel-control-prev:focus{
     border: 1px solid #088178;
@@ -208,4 +220,62 @@ height: 205px !important;
     height: 28px;
     color: #088178 ;
 }
+/* estilização do banner_cards */
+.banner{
+    position: relative;
+    max-width: 1320px !important;   
+    margin-bottom: 50px;
+}
+.card_banner{
+    position: absolute;
+    left: 30px;
+    top: 80px;
+}
+.card_banner *{
+    font-weight: 600;
+}
+.card_banner:hover h4{
+    right: 20px;
+margin-left: 10px;
+}
+.card_banner h4{
+    color: #088178;
+    transition: 200ms;
+}
+.card_banner h2{
+    font-size: 40px;
+}
+.card_banner button{
+    width: 140px;
+    height: 40px;
+    background-color: #088178;
+    color: white;
+    border: none;
+    transition: 200ms;
+    border-radius: 4px;
+}
+.card_banner button img{
+    width: 12px;
+    filter: brightness(1000%);
+    transition: 200ms;
+}
+.card_banner button:hover{
+    width: 150px;
+    background-color: #066963;
+}
+.card_banner button:hover img{
+    margin-left: 10px;
+}
 
+.card_product {
+    border: 1px solid #cdebbc;
+    padding: 10px;
+    border-radius: 24px;
+    text-align: left !important;
+}
+.card_product img{
+    border-radius: 24px;
+}
+.card-b{
+    text-align: left;
+}
