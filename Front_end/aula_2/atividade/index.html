@@ -2,150 +2,185 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="./css/style.css">
-    <title>Evara</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="./css/style.css">
+  <title>Evara</title>
 </head>
+
 <body>
-    <!----------------------------------- Início do header/navbar ----------------------------------->
-    <header>
-        <nav class="navbar bg-body-tertiary">
-                <div class="navbar-buttons">
-                  
-                    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-                        <div class="container-fluid">
-                            <div class="logo">
-                            <a class="navbar-brand" href="#">
-                                <img src="./img/logo.svg" alt="Logo" width="120"  class="d-inline-block align-text-top">
-                              </a>
-                              <a class="nav-link " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <strong style="color: rgb(26, 165, 146);;"> Browse Categories</strong> 
-                                </a>
-                      <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" href="#">Action</a></li>
-                          <li><a class="dropdown-item" href="#">Another action</a></li>
-                          <li><hr class="dropdown-divider"></li>
-                          <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
-                            </div>
-                              <div class="navbar-actions">
-                                <div class="drop_search">
-                                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                                    <li class="nav_item dropdown">
-                                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                          <strong>  All categories</strong> 
-                                          </a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#"> <strong> Action </strong></a></li>
-                                    <li><a class="dropdown-item" href="#"><strong>Another action </strong></a></li>
-                                    <li><hr class="dropdown-divider"></li>
-                                    <li><a class="dropdown-item" href="#"><strong>Something else here</strong></a></li>
-                                  </ul>
-                                </li>
-                              <form class="d-flex" role="search">
-                                <i class="bi bi-search"><img src="./img/search.svg" alt="" srcset=""></i>
-                                <input class="form-control" type="search" placeholder="Search for itens..." aria-label="Search">
-                                <!-- <button class="btn btn-outline-success" type="submit">Search</button> -->
-                              </form>
-                              </ul>
-                            </div>
-                          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                          </button>
-                          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                              <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <strong>  Home</strong>
-                                </a>
-                                <ul class="dropdown-menu">
-                                  <li><a class="dropdown-item" href="#">Action</a></li>
-                                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                                  <li><hr class="dropdown-divider"></li>
-                                  <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                </ul>
-                              </li>
-                              <li class="nav-item">
-                                <a class="nav-link" aria-disabled="true"><strong>About</strong></a>
-                              </li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <strong>Shop</strong>
-                                    </a>
-                                    <ul class="dropdown-menu">
-                                      <li><a class="dropdown-item" href="#">Action</a></li>
-                                      <li><a class="dropdown-item" href="#">Another action</a></li>
-                                      <li><hr class="dropdown-divider"></li>
-                                      <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                    </ul>
-                                  </li>
-                              <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <strong>Mega menu</strong>
-                                </a>
-                                <ul class="dropdown-menu">
-                                  <li><a class="dropdown-item" href="#">oi</a></li>
-                                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                                  <li><hr class="dropdown-divider"></li>
-                                  <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                </ul>
-                              </li>
-                              <li class="nav-item dropdown">
-                              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <strong>Blog</strong>
-                                </a>
-                                <ul class="dropdown-menu">
-                                  <li><a class="dropdown-item" href="#">Action</a></li>
-                                  <li><a class="dropdown-item" href="#">oi</a></li>
-                                  <li><hr class="dropdown-divider"></li>
-                                  <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                </ul>
-                              </li>
-                              <li class="nav-item dropdown">
-                              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <strong>Pages   </strong>
-                                </a>
-                                <ul class="dropdown-menu">
-                                  <li><a class="dropdown-item" href="#">Action</a></li>
-                                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                                  <li><hr class="dropdown-divider"></li>
-                                  <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                </ul>
-                              </li>
-                              <li class="nav-item">
-                                <a class="nav-link" aria-disabled="true"><strong>Contact</strong></a>
-                              </li>
-                            </ul>
-                        </div>
-                          </div>
-                          <div class="navbar-icon">
-                            <div style="display: flex;"><i><img src="./img/heart.svg" alt="" srcset=""></i><i><img src="./img/bag.svg" alt="" srcset=""></i></div>
-                            <div style="display: flex;"><strong style="height: 32px;"><i><img src="./img/headset.svg" alt=""></i>Hotline <p style="color: rgb(26, 165, 146);">1900 - 888 </p></strong></div>
-                          </div>
-                        </div>
-                      </nav>
-                  
-                     
+  <!----------------------------------- Início do header/navbar ----------------------------------->
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="navbar-buttons">
+
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+          <div class="container-fluid">
+            <div class="logo">
+              <a class="navbar-brand" href="#">
+                <img src="./img/logo.svg" alt="Logo" width="120" class="d-inline-block align-text-top">
+              </a>
+              <div>
+              <a class="nav-link " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <strong style="color: rgb(26, 165, 146);;"> Browse Categories</strong>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" target="_blank"
+                    href="https://wp.alithemes.com/html/evara/evara-frontend/index.html#">Something else here</a></li>
+              </ul>
             </div>
-                <div></div>
+            </div>
+            <div class="navbar-actions">
+              <div class="drop_search">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav_item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                      aria-expanded="false">
+                      <strong> All categories</strong>
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#"> <strong> Action </strong></a></li>
+                      <li><a class="dropdown-item" href="#"><strong>Another action </strong></a></li>
+                      <li>
+                        <hr class="dropdown-divider">
+                      </li>
+                      <li><a class="dropdown-item" href="#"><strong>Something else here</strong></a></li>
+                    </ul>
+                  </li>
+                  <form class="d-flex" role="search">
+                    <i class="bi bi-search"><img src="./img/search.svg" alt="" srcset=""></i>
+                    <input class="form-control" type="search" placeholder="Search for itens..." aria-label="Search">
+                    <!-- <button class="btn btn-outline-success" type="submit">Search</button> -->
+                  </form>
+                </ul>
+              </div>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                      aria-expanded="false">
+                      <strong> Home</strong>
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                      <li>
+                        <hr class="dropdown-divider">
+                      </li>
+                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" aria-disabled="true"><strong>About</strong></a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                      aria-expanded="false">
+                      <strong>Shop</strong>
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                      <li>
+                        <hr class="dropdown-divider">
+                      </li>
+                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                      aria-expanded="false">
+                      <strong>Mega menu</strong>
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">oi</a></li>
+                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                      <li>
+                        <hr class="dropdown-divider">
+                      </li>
+                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                      aria-expanded="false">
+                      <strong>Blog</strong>
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      <li><a class="dropdown-item" href="#">oi</a></li>
+                      <li>
+                        <hr class="dropdown-divider">
+                      </li>
+                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                      aria-expanded="false">
+                      <strong>Pages </strong>
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                      <li>
+                        <hr class="dropdown-divider">
+                      </li>
+                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" aria-disabled="true"><strong>Contact</strong></a>
+                  </li>
+                </ul>
               </div>
             </div>
-          </nav>
-    </header>
-    <!----------------------------------- Fim do header/navbar ----------------------------------->
-  
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <main class="container">
-      <!----------------------------------- inicio section/carousel ----------------------------------->
-      <section class="carousel">
+            <div class="navbar-icon">
+              <div style="display: flex;"><i><img src="./img/heart.svg" alt="" srcset=""></i><i><img src="./img/bag.svg"
+                    alt="" srcset=""></i></div>
+              <div style="display: flex;"><strong style="height: 32px;"><i><img src="./img/headset.svg"
+                      alt=""></i>Hotline <p style="color: rgb(26, 165, 146);">1900 - 888 </p></strong></div>
+            </div>
+          </div>
+        </nav>
+
+
+      </div>
+      <div></div>
+      </div>
+      </div>
+    </nav>
+  </header>
+  <!----------------------------------- Fim do header/navbar ----------------------------------->
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+  <main class="container">
+    <!----------------------------------- inicio section/carousel ----------------------------------->
+    <section class="carousel">
       <div id="carouselExampleIndicators" class="carousel slide carousel-fade">
         <div class="carousel-indicators">
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+            aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+            aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+            aria-label="Slide 3"></button>
         </div>
         <div class="carousel-inner">
           <div class="carousel-item active">
@@ -157,8 +192,8 @@
               <button class="botao1">Shop Now</button>
             </div>
             <div class="img">
-            <img src="./img/carousel1.png" class="d-block w-100" alt="...">
-          </div>
+              <img src="./img/carousel1.png" class="d-block w-100" alt="...">
+            </div>
           </div>
           <div class="carousel-item">
             <div class="carousel-cardText">
@@ -169,32 +204,37 @@
               <button class="botao2">Shop Now</button>
             </div>
             <div class="img">
-            <img src="./img/carousel2.png" class="d-block w-100" alt="...">
-          </div></div>
-          <div class="carousel-item">       <div class="carousel-cardText">
-            <h4>Upcoming offer</h4>
-            <h3>Big Deals From</h3>
-            <h2 style="color: #63a2c1;">Manufacturer</h2>
-            <p>Clothing, Shoes, Bags, Wallets...</p>
-            <button class="botao3">Shop Now</button>
+              <img src="./img/carousel2.png" class="d-block w-100" alt="...">
+            </div>
           </div>
-          <div class="img">
-          <img src="./img/carousel3.png" class="d-block w-100" alt="...">
-        </div></div>
+          <div class="carousel-item">
+            <div class="carousel-cardText">
+              <h4>Upcoming offer</h4>
+              <h3>Big Deals From</h3>
+              <h2 style="color: #63a2c1;">Manufacturer</h2>
+              <p>Clothing, Shoes, Bags, Wallets...</p>
+              <button class="botao3">Shop Now</button>
+            </div>
+            <div class="img">
+              <img src="./img/carousel3.png" class="d-block w-100" alt="...">
+            </div>
+          </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+          data-bs-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Previous</span>
         </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+          data-bs-slide="next">
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Next</span>
         </button>
       </div>
-     </section>
-      <!----------------------------------- Fim section/carousel ----------------------------------->
-      <!----------------------------------- Início section/small-cards ----------------------------------->
-     <section class="small-cards">
+    </section>
+    <!----------------------------------- Fim section/carousel ----------------------------------->
+    <!----------------------------------- Início section/small-cards ----------------------------------->
+    <section class="small-cards">
       <div class="row">
         <div class="col-sm-2 mb-3 mb-sm-0">
           <div class="card">
@@ -204,7 +244,7 @@
             </div>
           </div>
         </div>
-        <div class="col-sm-2">
+        <div class="col-sm-2 mb-3 mb-sm-0">
           <div class="card">
             <div class="card-body">
               <img src="./img/img_card2.png" alt="">
@@ -244,39 +284,56 @@
             </div>
           </div>
         </div>
-        
+
       </div>
-     </section>
-      <!----------------------------------- Fim section/small-cards ----------------------------------->
-      <!----------------------------------- Início section/banner_card ----------------------------------->
-      <section class="banner_cards">
-        <div class="banner">
-          <div class="card_banner">
-            <h4>Repair Services</h4>
-            <h2 style="margin-bottom: 0px;">We're an Apple</h2>
-            <h2>Authorised Service Provider</h2>
-            <button>Learn More <img src="./img/icone-seta-direita.png"></button>
-          </div>
-          <img src="./img/banner1.png" alt="">
+    </section>
+    <!----------------------------------- Fim section/small-cards ----------------------------------->
+    <!----------------------------------- Início section/banner_cards ----------------------------------->
+    <section class="banner_cards">
+      <div class="banner">
+        <div class="card_banner">
+          <h4>Repair Services</h4>
+          <h2 style="margin-bottom: 0px;">We're an Apple</h2>
+          <h2>Authorised Service Provider</h2>
+          <button>Learn More <img src="./img/icone-seta-direita.png"></button>
         </div>
-        <div style="display: flex;">
+        <img src="./img/banner1.png" alt="">
+      </div>
+      <!-- cards dos produtos -->
+      <div style="display: flex;justify-content: center;">
         <div class="cards_products">
           <div class="card_product" style="width: 18rem;">
             <img src="./img/camisa1.jpg" class="card-img-top" alt="...">
             <div class="card-b">
-              <h5 class="card-t">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+              <h5 class="card-t">Camisa 1</h5>
+              <p href="#" class="price">R$150.00</p>
             </div>
           </div>
+          <div class="cart">
+          <div class="text_icon">
+            Add To Cart
+          </div>
+          <div class="add_icon">
+          
+           <img src="./img/bag-plus.svg" alt="" >
+          </div>
         </div>
+      </div>
         <div class="cards_products">
           <div class="card_product" style="width: 18rem;">
             <img src="./img/camisa2.jpg" class="card-img-top" alt="...">
             <div class="card-b">
-              <h5 class="card-t">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+              <h5 class="card-t">Camisa 2</h5>
+              <p href="#" class="price">R$250.00</p>
+            </div>
+          </div>
+          <div class="cart">
+            <div class="text_icon">
+              Add To Cart
+            </div>
+            <div class="add_icon">
+            
+             <img src="./img/bag-plus.svg" alt="" >
             </div>
           </div>
         </div>
@@ -284,9 +341,17 @@
           <div class="card_product" style="width: 18rem;">
             <img src="./img/camisa3.jpg" class="card-img-top" alt="...">
             <div class="card-b">
-              <h5 class="card-t">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+              <h5 class="card-t">Camisa 3</h5>
+              <p href="#" class="price">R$350.00</p>
+            </div>
+          </div>
+          <div class="cart">
+            <div class="text_icon">
+              Add To Cart
+            </div>
+            <div class="add_icon">
+            
+             <img src="./img/bag-plus.svg" alt="" >
             </div>
           </div>
         </div>
@@ -294,76 +359,134 @@
           <div class="card_product" style="width: 18rem;">
             <img src="./img/camisa4.jpg" class="card-img-top" alt="...">
             <div class="card-b">
-              <h5 class="card-t">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+              <h5 class="card-t">Camisa 4</h5>
+              <p href="#" class="price">R$450.00</p>
+            </div>
+          </div>
+          <div class="cart">
+            <div class="text_icon">
+              Add To Cart
+            </div>
+            <div class="add_icon">
+            
+             <img src="./img/bag-plus.svg" alt="" >
             </div>
           </div>
         </div>
       </div>
-      </section>
-    </main>
-    <!-- depois analisa esta merda pra ve se precisa disso aq -->
-    <script>
-      document.addEventListener('DOMContentLoaded', () => {
-          const buttons = document.querySelectorAll('.nav-button');
-          const collapses = document.querySelectorAll('.collapse');
+    </section>
+  </main>
 
-          buttons.forEach(button => {
-              button.addEventListener('click', () => {
-                  // Fecha todas as seções e remove a classe 'active' dos botões
-                  collapses.forEach(collapse => collapse.classList.remove('show'));
-                  buttons.forEach(btn => btn.classList.remove('active'));
+  <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5">
+    <div class="footer_objects" style="display: flex;">
+      <div class="col mb-3">
+        <a href="/" class="d-flex align-items-center mb-3 link-body-emphasis text-decoration-none">
+          <img src="./img/logo.svg" alt="Logo" width="120" class="d-inline-block align-text-top">
+        </a>
+        <p class="text-body-secondary">© 2024</p>
+      </div>
 
-                  // Ativa o botão clicado e exibe a seção correspondente
-                  button.classList.add('active');
-                  const targetId = button.getAttribute('data-bs-target').substring(1);
-                  const targetContent = document.getElementById(targetId);
-                  targetContent.classList.add('show');
-              });
-          });
+      <div class="col mb-3">
+
+      </div>
+
+      <div class="col mb-3">
+        <h5>About</h5>
+        <ul class="nav flex-column">
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+        </ul>
+      </div>
+
+      <div class="col mb-3">
+        <h5>My Account</h5>
+        <ul class="nav flex-column">
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+        </ul>
+      </div>
+
+      <div class="col mb-3">
+        <h5>Section</h5>
+        <ul class="nav flex-column">
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!-- depois analisa esta merda pra ve se precisa disso aq -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const buttons = document.querySelectorAll('.nav-button');
+      const collapses = document.querySelectorAll('.collapse');
+
+      buttons.forEach(button => {
+        button.addEventListener('click', () => {
+          // Fecha todas as seções e remove a classe 'active' dos botões
+          collapses.forEach(collapse => collapse.classList.remove('show'));
+          buttons.forEach(btn => btn.classList.remove('active'));
+
+          // Ativa o botão clicado e exibe a seção correspondente
+          button.classList.add('active');
+          const targetId = button.getAttribute('data-bs-target').substring(1);
+          const targetContent = document.getElementById(targetId);
+          targetContent.classList.add('show');
+        });
       });
+    });
   </script>
- <script>
-  document.addEventListener('DOMContentLoaded', () => {
-  const accordionButtons = document.querySelectorAll('.accordion-button');
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const accordionButtons = document.querySelectorAll('.accordion-button');
 
-  accordionButtons.forEach(button => {
-      button.addEventListener('click', () => {
+      accordionButtons.forEach(button => {
+        button.addEventListener('click', () => {
           // Remove a classe 'active' de todos os botões
           accordionButtons.forEach(btn => btn.classList.remove('active'));
 
           // Adiciona a classe 'active' ao botão clicado
           button.classList.add('active');
+        });
       });
-  });
-});
+    });
 
-</script>
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  const appsContentItems = document.querySelectorAll('.appsContent-items');
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const appsContentItems = document.querySelectorAll('.appsContent-items');
 
-  appsContentItems.forEach(item => {
-      item.addEventListener('click', () => {
+      appsContentItems.forEach(item => {
+        item.addEventListener('click', () => {
           // Remove a classe 'active' de todos os itens
           appsContentItems.forEach(it => {
-              it.classList.remove('active');
-              const textElement = it.querySelector('.appsItem-Text');
-              if (textElement) {
-                  textElement.classList.remove('active');
-              }
+            it.classList.remove('active');
+            const textElement = it.querySelector('.appsItem-Text');
+            if (textElement) {
+              textElement.classList.remove('active');
+            }
           });
 
           // Adiciona a classe 'active' ao item clicado
           item.classList.add('active');
           const textElement = item.querySelector('.appsItem-Text');
           if (textElement) {
-              textElement.classList.add('active');
+            textElement.classList.add('active');
           }
+        });
       });
-  });
-});
-</script>
+    });
+  </script>
 </body>
+
 </html>

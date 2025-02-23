@@ -4,18 +4,29 @@ body{
     padding: 0;
 }
 header{
-    display: grid !important;
+    width: 100%;
+    display: flex !important;
     justify-content: center !important;
+    border-bottom: 1px solid #bbbbbb67;
 
 }
+footer{
+    width: 100vw;
+    display: grid !important;
+    justify-content: center !important;
+    border-top: 1px solid #bbbbbb67;
+}
 section{
-    margin-bottom: 20px;
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    margin-bottom: 40px;
 }
 .container-fluid{
     justify-content: left !important;
 }
 .navbar{
-    width: 1500px !important;
+    max-width: 1320px !important;
     display: flex;
     background-color: white !important;
     
@@ -38,7 +49,8 @@ a strong:hover{
     color: #088178;
 }
 .logo{
-    margin-right: 100px;
+    width: 160px;
+    margin-right: 60px;
 }
 .logo img{
     margin-bottom: 10px !important;
@@ -60,9 +72,9 @@ input:placeholder{
     font-size: 24px;
     margin-left: auto;
 }
-.navbar-icon *{
-    margin-left: 10px;
-}
+    .navbar-icon *{
+        margin-left: 10px;
+    }
 .navbar-icon strong{
     text-align: right !important;
     display: flex;
@@ -78,7 +90,7 @@ input:placeholder{
     justify-content: right;
 }
 .logo .nav-link strong{
-    font-size: 24px;
+    font-size: 18px;
 }
 
 /* main e section */
@@ -88,7 +100,7 @@ main{
 }
 .carousel{
     max-width: 1320px !important;
-    width: 1320px !important;
+     
 }
 .carousel-item.active, .carousel-item{
     display: flex;
@@ -221,10 +233,13 @@ height: 205px !important;
     color: #088178 ;
 }
 /* estilização do banner_cards */
+
 .banner{
     position: relative;
     max-width: 1320px !important;   
     margin-bottom: 50px;
+    display: grid;
+    justify-items: center;
 }
 .card_banner{
     position: absolute;
@@ -267,6 +282,16 @@ margin-left: 10px;
     margin-left: 10px;
 }
 
+.banner_cards{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.cards_products{
+    position: relative;
+    margin: 0px 20px !important;
+}
 .card_product {
     border: 1px solid #cdebbc;
     padding: 10px;
@@ -278,4 +303,153 @@ margin-left: 10px;
 }
 .card-b{
     text-align: left;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+.card-t{
+    font-weight: 600;
+    font-size: 22px;
+}
+.price{
+    color: #088178;
+    font-weight: 600;
+    font-size: 24px;
+}
+
+.cart{
+    position: absolute  ;
+    z-index: 10;
+    width: 60px;
+    height: 60px;
+    top: 300px;
+    left: 200px;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    transition: 200ms;
+    cursor: pointer;
+}
+.add_icon{
+    position: absolute;
+    border: 1px solid #cdebbc;
+    border-radius: 50px;
+    padding: 12px;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    background-color: #e8f6ea;
+    transition: 200ms;
+}
+.text_icon{
+    opacity: 0;
+    background-color: #3a9b91;
+    position: absolute;
+    display: grid;
+    justify-items: center;
+    width: 100px;
+    margin-bottom: 50px;
+    color: rgb(255, 255, 255);
+    padding: 5px;
+    border-radius: 12px;
+    z-index: 9;
+    transition: 300ms;  
+}
+.add_icon img{
+    transition: 200ms;
+ width: 34px;
+}
+.cart:hover{
+  top: 295px;
+}
+.cart:hover .add_icon{
+    background-color: #3a9b91;
+    border: 1px solid white;
+}
+.cart:hover .text_icon{
+    opacity: 1;
+    margin-bottom: 100px;
+}
+.cart:hover .add_icon img{
+    filter: brightness(1000%);
+}
+
+
+.footer_objects .col{
+    margin: 0px 80px !important;
+    width: 100px;
+}
+.footer_objects .col h5{
+    width: 150px;
+    font-weight: 600;
+    color: #088178;
+}   
+@media (max-width: 1280px){
+    .navbar{
+        max-width: 1280px !important;
+    }
+    .logo{
+        margin-right: 20px;
+    }
+    .navbar-icon{
+        font-size: 22px;
+    }
+    .navbar-icon *{
+        margin-left: 5px;
+    }
+    .navbar-icon i img{
+        width: 25px;
+        height: 25px;
+    }
+    main{
+        max-width: 1280px !important;
+    }
+    section{
+        max-width: 1280px !important;
+    }
+    .carousel{
+        max-width: 1280px !important;
+    }
+    .carousel-item.active, .carousel-item{
+        height: 480px;
+        padding: 128px;
+    }
+    .carousel-control-prev{
+        left: 7px;
+    }
+    .carousel-control-next{
+        right: 7px;
+    }
+    .carousel-item .img{
+        width: 60% !important;
+    }
+    .carousel-cardText{
+        width: 40% !important;
+    }
+    .carousel-cardText h4{
+        font-size: 12px;
+    }
+    .carousel-cardText h3{
+        font-size: 38px;
+    }
+    .carousel-cardText h2{
+        font-size: 56px;
+    }
+     
+    .row{
+        width: 705px;
+    }
+    .col-sm-2, .col-sm-2 .card, .col-sm-2 .card .card-body{
+        height: 195px !important;
+        width: 195px !important;
+        }
+        .col-sm-2{
+            margin: 10px 15px !important;
+        }
+
+        .banner{
+            max-width: 1280px !important;
+        }
+        .banner img{
+            width: 100% !important;
+        }
 }
