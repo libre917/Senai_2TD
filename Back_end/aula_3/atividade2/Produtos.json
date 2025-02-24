@@ -1,0 +1,27 @@
+{
+    "produtos": [{
+        "nome" : "leite",
+        "preco" : 13,
+        "descricao" : "é branco e liquido",
+        "categoria" : "laticínio"
+    },
+    {
+        "nome" : "arroz",
+        "preco" : 20,
+        "descricao" : "é branco e comestível",
+        "categoria" : "necessidade basica"
+    },
+    {
+        "nome" : "feijão",
+        "preco" : 21,
+        "descricao" : "é marrom, ou preto, ou branco, depende, mas todos são consumíveis ",
+        "categoria" : "necessidade basica"
+    },
+    {
+        "nome" : "picanha",
+        "preco" : 13,
+        "descricao" : "veio do lula",
+        "categoria" : "petista"
+    }
+]
+}

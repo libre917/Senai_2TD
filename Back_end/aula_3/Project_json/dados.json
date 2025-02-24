@@ -1,0 +1,14 @@
+{
+    "nome": "Fred da Silva",
+    "idade": 30,
+    "endereco": {
+        "rua": "Casa da sua mãe, 123",
+        "Cidade": "São Paulo"
+    },
+    "telefones": [
+        "11-1234-5678",
+        "11-9876-5432"
+    ],
+    "ativo": true,
+    "null": null
+}
