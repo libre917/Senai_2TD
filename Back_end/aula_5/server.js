@@ -22,6 +22,7 @@ const server = http.createServer((req, res) =>{
     //  console.log(`Requisição recebida e ignorada com sucesso: ${req.method} ${req.url}`);
     //  res.writeHead(200, {'Content-type': 'text/html'});
     //  res.end('<h1>Servidor Web simples rodando</h1>');
+
     const {method, url} = req;
 
     console.log(`Requisição recebida e ignorada com sucesso: ${method} ${url}`);
@@ -42,6 +43,16 @@ const server = http.createServer((req, res) =>{
         res.writeHead(404, {'Content-Type': 'text/plain'})
         res.end('Poduto não encontrado')
     }
+    } else if (url === '/contato' && method === 'POST') {
+        let body = '';
+        req.on('data', chunk => {
+            body += chunk;
+        });
+        req.on('end', () => {
+            console.log('Dados recebidos:', body)
+            res.writeHead(201, { 'Content-Type': 'text/plain' });
+            res.end('Dados de contato recebidos com sucesso!!!');
+        })
     }
 })
 
