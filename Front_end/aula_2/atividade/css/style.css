@@ -1429,3 +1429,47 @@ footer{
     margin: 0px 3px !important;
 }
 }
+@media (max-width: 512px) {
+  header {
+    width: 512px !important;
+    padding: 0 !important;
+    margin-bottom: 100px;
+}
+main{
+    width: 512px !important;
+    justify-items:center;
+}
+footer{
+    width: 512px !important;
+}
+.navbar-icon{
+  width: 228px;
+  margin: 0px !important;
+}
+  nav .btn{
+    margin-left: 10px;
+  }
+  .banner_cards{
+    max-width: 512px !important;
+  }
+  .card_banner h4{
+    font-size: 10px;
+  }
+  .card_banner h2{
+    font-size: 15px !important;
+  }
+  .card_banner button{
+    width: 70px;
+    height: 25px;
+    font-size: 8px;
+  }
+  .card_banner button:hover{
+    width: 80px;
+  }
+  .card_banner button img {
+    width: 8px !important;
+  }
+.footer_objects .col {
+    margin: 0px 0px !important;
+}
+}
