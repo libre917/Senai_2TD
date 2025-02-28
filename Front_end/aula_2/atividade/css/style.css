@@ -98,7 +98,23 @@ input:placeholder {
 .logo .nav-link strong {
   font-size: 18px;
 }
-
+nav .btn{
+  background-color: white;
+  border: 1px solid gray;
+  display: none;
+}
+.offcanvas-body{
+  display: none !important;
+  height: 600px;
+  font-size: 14px;
+}
+.offcanvas-body .dropdown-menu{
+  width: 350px;
+}
+nav .btn:hover{
+  border-color: white ;
+  background-color: #3a9b91;
+}
 /* main e section */
 
 .carousel {
@@ -293,7 +309,10 @@ div .carousel-indicators .active {
 .card_banner button:hover img {
   margin-left: 10px;
 }
-
+.div-card-products{
+  display: flex;
+  justify-content: center
+}
 .banner_cards {
   display: grid;
   justify-content: center;
@@ -1065,9 +1084,16 @@ font-size: 16px;
   position: relative;
 }
 .navbar-actions{
-  width: 55px;
-  position: absolute;
-  left: 780px;
+ display: none;
+}
+nav .btn{
+  display: block;
+}
+.offcanvas-body{
+  display: block !important;
+}
+.offcanvas-body .dropdown-menu{
+  border:none !important;
 }
 .dropdown{
   right: 0px;
@@ -1091,15 +1117,315 @@ font-size: 16px;
   margin-bottom: 5px;
 }
 .navbar-icon{
-  margin-right: 90px;
+  margin-right: 10px;
 }
 .navbar-icon strong{
   display: none;
 } 
+.carousel-indicators{
+  display: none;
+}
 /* .navbar-icon{
   position: absolute;
   left: 415px;
 } */
+ .carousel-item, .carousel-item.active{
+  padding: 51px;
+ }
+.carousel-control-prev,
+.carousel-control-next {
+  display: none;
+}
+.banner{
+  max-width: 89% !important;
+}
 
-
+}
+@media (max-width: 832px) {
+  header {
+    width: 832px !important;
+    padding: 0 !important;
+    margin-bottom: 100px;
+}
+main{
+    width: 832px !important;
+    justify-items:center;
+}
+footer{
+    width: 832px !important;
+}
+.footer_objects .col {
+    margin: 0px 30px !important;
+}
+.carousel-item, .carousel-item.active{
+  padding: 10px !important;
+  flex-direction: column;
+ }
+ .carousel-inner{
+  height: 600px;
+  overflow:visible
+ }
+ .carousel-cardText{
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  width: 500px !important;
+  background-color: white;
+  margin-right: 0 !important;
+  margin-bottom: 20px;
+  z-index: 11;
+ }
+ .carousel-cardText h4 {
+  font-size: 22px;
+  font-weight: 600;
+}
+.carousel-cardText h3 {
+  font-size: 48px;
+  font-weight: 600;
+}
+.carousel-cardText h2 {
+  font-size: 66px;
+  font-weight: 600;
+}
+.img{
+  width: 78% !important;
+}
+.banner{
+  max-width: 95% !important;
+}
+.cards_products{
+  margin: 0px 6px !important;
+}
+}
+@media (max-width: 800px) {
+  header {
+    width: 800px !important;
+    padding: 0 !important;
+    margin-bottom: 100px;
+}
+main{
+    width: 800px !important;
+    justify-items:center;
+}
+footer{
+    width: 800px !important;
+}
+.footer_objects .col {
+    margin: 0px 30px !important;
+}
+.small-cards .row{
+  width: 650px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.card_banner h4{
+  font-size: 13px;
+}
+.card_banner h2{
+  font-size: 18px;
+}
+.card_banner button{
+  width: 90px;
+  height: 30px;
+  font-size: 10px;
+}
+.card_banner button:hover{
+  width: 100px;
+}
+.div-card-products{
+  width: 550px;
+  flex-wrap: wrap;
+}
+.card_product{
+  margin-bottom: 10px;
+}
+.cards_products{
+  margin: 0px 16px !important;
+}
+}
+@media (max-width: 768px) {
+header {
+    width: 768px !important;
+    padding: 0 !important;
+    margin-bottom: 100px;
+}
+main{
+    width: 768px !important;
+    justify-items:center;
+}
+footer{
+    width: 768px !important;
+}
+.footer_objects .col {
+    margin: 0px 30px !important;
+}
+}
+@media (max-width: 736px) {
+  header {
+    width: 736px !important;
+    padding: 0 !important;
+    margin-bottom: 100px;
+}
+main{
+    width: 736px !important;
+    justify-items:center;
+}
+footer{
+    width: 736px !important;
+}
+.footer_objects .col {
+    margin: 0px 20px !important;
+}
+}
+@media (max-width: 704px) {
+  header {
+    width: 704px !important;
+    padding: 0 !important;
+    margin-bottom: 100px;
+}
+main{
+    width: 704px !important;
+    justify-items:center;
+}
+footer{
+    width: 704px !important;
+}
+.footer_objects .col {
+    margin: 0px 18px !important;
+}
+.img{
+  width: 84% !important;
+}
+}
+@media (max-width: 672px) {
+  header {
+    width: 672px !important;
+    padding: 0 !important;
+    margin-bottom: 100px;
+}
+main{
+    width: 672px !important;
+    justify-items:center;
+}
+footer{
+    width: 672px !important;
+}
+.footer_objects .col {
+    margin: 0px 16px !important;
+}
+.banner{
+  max-width: 100% !important;
+}
+}
+@media (max-width: 640px) {
+  header {
+    width: 640px !important;
+    padding: 0 !important;
+    margin-bottom: 100px;
+}
+main{
+    width: 640px !important;
+    justify-items:center;
+}
+footer{
+    width: 640px !important;
+}
+.footer_objects .col {
+    margin: 0px 12px !important;
+}
+.small-cards .row{
+  max-width: 640px;
+}
+}
+@media (max-width: 608px) {
+  header {
+    width: 608px !important;
+    padding: 0 !important;
+    margin-bottom: 100px;
+}
+main{
+    width: 608px !important;
+    justify-items:center;
+}
+footer{
+    width: 608px !important;
+}
+.footer_objects .col {
+    margin: 0px 10px !important;
+}
+.carousel-item, .carousel-item.active{
+  max-width: 608px;
+}
+.banner_cards{
+  max-width: 608px !important;
+}
+}
+@media (max-width: 576px) {
+  header {
+    width: 576px !important;
+    padding: 0 !important;
+    margin-bottom: 100px;
+}
+main{
+    width: 576px !important;
+    justify-items:center;
+}
+footer{
+    width: 576px !important;
+}
+.navbar-icon{
+  width: 292px;
+  margin: 0px !important;
+}
+nav .btn{
+  margin-left: 10px;
+}
+.footer_objects .col {
+    margin: 0px 6px !important;
+}
+}
+@media (max-width: 544px) {
+  header {
+    width: 544px !important;
+    padding: 0 !important;
+    margin-bottom: 100px;
+}
+main{
+    width: 544px !important;
+    justify-items:center;
+}
+footer{
+    width: 544px !important;
+}
+.navbar-icon{
+  width: 260px;
+  margin: 0px !important;
+}
+  nav .btn{
+    margin-left: 10px;
+  }
+  .banner_cards{
+    max-width: 544px !important;
+  }
+  .card_banner h4{
+    font-size: 10px;
+  }
+  .card_banner h2{
+    font-size: 15px !important;
+  }
+  .card_banner button{
+    width: 70px;
+    height: 25px;
+    font-size: 8px;
+  }
+  .card_banner button:hover{
+    width: 80px;
+  }
+  .card_banner button img {
+    width: 8px !important;
+  }
+.footer_objects .col {
+    margin: 0px 3px !important;
+}
 }
