@@ -1,0 +1,28 @@
+Header{
+    height: 10%;
+    border-bottom: 1px solid white;
+}
+Header nav {
+    margin-bottom: 15px;
+}
+Header ul{
+ display: flex;
+ margin-top: 15px;
+ list-style: none;
+ justify-content: center;
+}
+Header li{
+    padding: 5px;
+}
+.titulo{
+    text-align: center;
+    color: rgb(82, 214, 82);
+    font-size: xx-large;
+}
+a{
+    transition: 250ms;
+}
+a:hover{
+    text-shadow: 0px 0px 10px rgb(82, 214, 82) ;
+    -webkit-text-stroke: 1px rgb(82, 214, 82);
+}
