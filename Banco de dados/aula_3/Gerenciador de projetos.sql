@@ -1,10 +1,11 @@
 create database Gerenciador_de_Projetos;
 use Gerenciador_de_Projetos;
 drop database Gerenciador_de_Projetos;
+select *from Projetos;
+select *from colaborador;
+select *from tarefas;
 
 create table Projetos (
-ID_colaborador int not null,
-ID_tarefa int not null,
 ID_projeto int auto_increment not null primary key,
 nome_projeto text not null,
 descricao varchar(100)
@@ -39,3 +40,24 @@ values
 ('projeto1','tchua'),
 ('projeto2','lalala'),
 ('projeto3','io');
+
+update colaborador
+set nome = 'matheus'
+where CPF = '32165498723';
+
+update tarefas 
+set descricao_tarefa = 'descrição nova';
+
+update Projetos 
+set descricao = 'descrição nova'
+where nome_projeto = 'projeto3';
+
+delete from tarefas;
+
+delete from colaborador
+where CPF = '78945612356'; 
+
+delete from Projetos
+where descricao = 'descrição nova';
+
+
