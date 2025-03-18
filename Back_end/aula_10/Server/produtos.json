@@ -1,0 +1,22 @@
+[
+    {
+        "id":1,
+        "nome":"camiseta",
+        "preco": 29.99
+    },
+    {
+        "id":2,
+        "nome":"calça",
+        "preco": 39.99
+    },
+    {
+        "id":3,
+        "nome":"camisa florida",
+        "preco": 9.99
+    },
+    {
+        "id":4,
+        "nome":"cracha do SENAI",
+        "preco": 299.99
+    }
+]
