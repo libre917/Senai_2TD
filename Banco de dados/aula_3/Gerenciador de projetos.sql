@@ -5,6 +5,7 @@ select *from Projetos;
 select *from colaborador;
 select *from tarefas;
 
+
 create table Projetos (
 ID_projeto int auto_increment not null primary key,
 nome_projeto text not null,
@@ -60,4 +61,7 @@ where CPF = '78945612356';
 delete from Projetos
 where descricao = 'descrição nova';
 
+select ID_colaborador, email from colaborador;
+
+select *from colaborador;
 
