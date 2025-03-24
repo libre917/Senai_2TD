@@ -6,7 +6,7 @@ axios.post("https://jsonplaceholder.typicode.com/todos", {
     completed: false
 })
 .then(response=>{
-    console.log('Novo ToDO criado:', response.data)
+    console.log('Novo ToDo criado:', response.data)
 })
 .catch(error=>{
     console.log(error)

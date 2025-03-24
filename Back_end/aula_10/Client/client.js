@@ -30,6 +30,7 @@ async function exibirDetalhesProduto(id) {
 }
 
 async function exibirMenu() {
+  console.log('\n')
   const perguntas = [
     {
       type: "list",
@@ -48,23 +49,35 @@ async function exibirMenu() {
     switch (resposta.opcao) {
       case "listar":
         const produtos = await listarProdutos();
-        console.log(produtos);
+        if (Array.isArray(produtos) && produtos.length > 0) {
+          console.log(chalk.greenBright('Lista de produtos: '));
+          produtos.forEach(produto => {
+            console.log(`- ${chalk.blueBright(produto.id)}: ${chalk.green(produto.nome)} - R$ ${chalk.greenBright(produto.preco)}`)
+          })
+        } else {
+          console.log(chalk.yellowBright("Nenhum produto encontrado."));
+        }
         exibirMenu();
         break;
       case "exibir":
         const idResposta = await inquirer.prompt([
-            {
-                type: 'input',
-                name: 'id',
-                message: chalk.blue('Digite o ID do produto: ')
-            }
-        ])
-        const detalhes = await exibirDetalhesProduto(idResposta.id);
-        console.log(detalhes);
+          {
+            type: "input",
+            name: "id",
+            message: chalk.blue("Digite o ID do produto: "),
+          },
+        ]);
+        const detalhe = await exibirDetalhesProduto(idResposta.id);
+        if(detalhe) {
+          console.log(chalk.greenBright('Detalhes do produto'))
+          console.log(`- ${chalk.blueBright(detalhe.id)}: ${chalk.green(detalhe.nome)} - R$ ${chalk.greenBright(detalhe.preco)}`)
+        }else{
+          console.log('Nenhum produto encontrado')
+        }
         exibirMenu();
         break;
       case "sair":
-        console.log(chalk.yellow('Você escolheu sair'))
+        console.log(chalk.yellow("Você escolheu sair"));
         break;
     }
   } catch (error) {
