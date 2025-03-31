@@ -29,7 +29,7 @@ app.get("/categorias/:categoria/produto/:produtoId", (req, res) => {
   res.send(`Categoria: ${categoria} e Produto: ${produtoId}`);
 });
 // Metodo POST
-app.post("/produtos", (req, res) => {
+app.post("/produto", (req, res) => {
   const novoProduto = req.body;
   console.log("Novo Produto:", novoProduto);
   res.status(201).send("Produto criado com sucesso!");

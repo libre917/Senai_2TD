@@ -1,7 +1,7 @@
 const express = require('express');
 const fs = require('fs')
 const router = express.Router();
-const axios = require('axios')
+
 
 
 router.get('/', (req,res)=>{
@@ -26,16 +26,10 @@ router.get('/:id', (req,res)=>{
     }
 })
 
-router.axios.post('http://localhost:3000/',{
-id: 1,
-nome:'Computadores',
-quantidade:29
-})
-.then(response=>{
-console.log('Novo ToDo criado:')
-})
-.catch(error=>{
-console.log(error)
-})
+router.post("/", (req, res) => {
+    const novoEstoque = req.body;
+    console.log("Conteúdo do novo estoque:", novoEstoque);
+    res.status(201).send("\nProduto criado com sucesso!\n");
+  });
 
 module.exports = router;
