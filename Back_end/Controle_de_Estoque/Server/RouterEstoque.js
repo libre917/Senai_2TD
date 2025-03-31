@@ -1,10 +1,11 @@
 const express = require('express');
 const fs = require('fs')
 const router = express.Router();
+const axios = require('axios')
 
 
 router.get('/', (req,res)=>{
-    res.status(200).send(`<body style="background-color:black; color:white;"><h1>Página inicial</h1></body>`)
+    res.json(estoques);
 })
 let estoques = [];
 try{
@@ -15,19 +16,26 @@ try{
     estoques = [];
 }
 
-router.get('/estoques', (req,res)=>{
-    res.json(estoques);
-})
-
-router.get('/estoques/:id', (req,res)=>{
+router.get('/:id', (req,res)=>{
     const id = parseInt(req.params.id);
     const estoque = estoques.find(p => p.id === id)
-
     if (estoque){
         res.json(estoque)
     } else {
         res.status(404).send('estoque não encontrado')
     }
+})
+
+router.axios.post('http://localhost:3000/',{
+id: 1,
+nome:'Computadores',
+quantidade:29
+})
+.then(response=>{
+console.log('Novo ToDo criado:')
+})
+.catch(error=>{
+console.log(error)
 })
 
 module.exports = router;

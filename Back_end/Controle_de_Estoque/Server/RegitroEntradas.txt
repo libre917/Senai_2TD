@@ -92,4 +92,78 @@
  "DataHora":"[2025-03-24T19:44:02.685Z]", 
 "MetodoEntrada":"GET", 
 "URLEntrada":"/admin"
+}{
+ "DataHora":"[2025-03-31T17:02:42.837Z]", 
+"MetodoEntrada":"GET", 
+"URLEntrada":"/estoques"
+}
+{
+ "DataHora":"[2025-03-31T17:02:42.863Z]", 
+"MetodoEntrada":"GET", 
+"URLEntrada":"/favicon.ico"
+}
+{
+ "DataHora":"[2025-03-31T17:02:46.838Z]", 
+"MetodoEntrada":"GET", 
+"URLEntrada":"/estoques/3"
+}
+{
+ "DataHora":"[2025-03-31T17:02:46.864Z]", 
+"MetodoEntrada":"GET", 
+"URLEntrada":"/favicon.ico"
+}
+{
+ "DataHora":"[2025-03-31T17:40:57.014Z]", 
+"MetodoEntrada":"POST", 
+"URLEntrada":"/"
+}
+{
+ "DataHora":"[2025-03-31T17:43:39.146Z]", 
+"MetodoEntrada":"POST", 
+"URLEntrada":"/"
+}
+{
+ "DataHora":"[2025-03-31T17:44:39.537Z]", 
+"MetodoEntrada":"POST", 
+"URLEntrada":"/"
+}
+{
+ "DataHora":"[2025-03-31T17:44:47.855Z]", 
+"MetodoEntrada":"POST", 
+"URLEntrada":"/"
+}
+{
+ "DataHora":"[2025-03-31T17:45:01.427Z]", 
+"MetodoEntrada":"POST", 
+"URLEntrada":"/estoques"
+}
+{
+ "DataHora":"[2025-03-31T17:45:04.121Z]", 
+"MetodoEntrada":"POST", 
+"URLEntrada":"/estoques"
+}
+{
+ "DataHora":"[2025-03-31T17:48:40.187Z]", 
+"MetodoEntrada":"POST", 
+"URLEntrada":"/estoques"
+}
+{
+ "DataHora":"[2025-03-31T17:48:49.296Z]", 
+"MetodoEntrada":"POST", 
+"URLEntrada":"/estoques"
+}
+{
+ "DataHora":"[2025-03-31T17:49:10.447Z]", 
+"MetodoEntrada":"POST", 
+"URLEntrada":"/estoques"
+}
+{
+ "DataHora":"[2025-03-31T17:49:12.380Z]", 
+"MetodoEntrada":"POST", 
+"URLEntrada":"/estoques"
+}
+{
+ "DataHora":"[2025-03-31T17:49:38.210Z]", 
+"MetodoEntrada":"POST", 
+"URLEntrada":"/"
 }
