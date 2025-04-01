@@ -20,12 +20,17 @@ router.get('/', (req,res)=>{
 router.get('/:id', (req,res)=>{
     const id = parseInt(req.params.id);
     const estoque = estoques.find(p => p.id === id)
-
     if (estoque){
         res.json(estoque)
     } else {
         res.status(404).send('estoque não encontrado')
     }
 })
+
+router.post("/", (req, res) => {
+    const novoEstoque = req.body;
+    console.log("Conteúdo do novo estoque:", novoEstoque);
+    res.status(201).send("\nProduto criado com sucesso!\n");
+  });
 
 module.exports = router;

@@ -5,6 +5,9 @@ const port = 3000;
 const rotaEstoque = require('./RouterEstoque')
 const rotaAdmin = require('./RouterAdmin')
 
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
 const logger = (req, res, next) => {
     const data = new Date();
     console.log(`[${data.toISOString()}] ${req.method} ${req.url}`);
@@ -17,6 +20,9 @@ const logger = (req, res, next) => {
   };
   
   app.use(logger);  
+  app.get('/', (req,res)=>{
+    res.status(200).send('Pagina inicial do Controle de estoque')
+  })
 
 
   app.get('/', (req, res)=>{

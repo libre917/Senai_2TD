@@ -2,6 +2,14 @@
 import {useState} from "react";
 
 export default function Home() {
+  const produtos = [
+    {},
+    {},
+    {},
+    {},
+    {},
+    {}
+  ]
   const [Contador, setContator] = useState(0);
   function handleAcrescentar(){
     if (Contador >= 5){
