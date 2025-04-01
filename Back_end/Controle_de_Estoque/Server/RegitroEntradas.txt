@@ -108,3 +108,83 @@
 "MetodoEntrada":"GET", 
 "URLEntrada":"/admin"
 }
+{
+ "DataHora":"[2025-04-01T17:36:52.727Z]", 
+"MetodoEntrada":"GET", 
+"URLEntrada":"/estoques"
+}
+{
+ "DataHora":"[2025-04-01T17:38:19.475Z]", 
+"MetodoEntrada":"GET", 
+"URLEntrada":"/estoques"
+}
+{
+ "DataHora":"[2025-04-01T17:38:42.882Z]", 
+"MetodoEntrada":"GET", 
+"URLEntrada":"/estoques"
+}
+{
+ "DataHora":"[2025-04-01T17:39:46.244Z]", 
+"MetodoEntrada":"GET", 
+"URLEntrada":"/estoques"
+}
+{
+ "DataHora":"[2025-04-01T17:39:47.229Z]", 
+"MetodoEntrada":"GET", 
+"URLEntrada":"/estoques"
+}
+{
+ "DataHora":"[2025-04-01T17:40:17.874Z]", 
+"MetodoEntrada":"GET", 
+"URLEntrada":"/estoques"
+}
+{
+ "DataHora":"[2025-04-01T17:40:35.297Z]", 
+"MetodoEntrada":"GET", 
+"URLEntrada":"/estoques"
+}
+{
+ "DataHora":"[2025-04-01T17:41:02.206Z]", 
+"MetodoEntrada":"GET", 
+"URLEntrada":"/estoques"
+}
+{
+ "DataHora":"[2025-04-01T17:41:30.641Z]", 
+"MetodoEntrada":"GET", 
+"URLEntrada":"/estoques"
+}
+{
+ "DataHora":"[2025-04-01T17:45:33.569Z]", 
+"MetodoEntrada":"GET", 
+"URLEntrada":"/estoques"
+}
+{
+ "DataHora":"[2025-04-01T17:45:35.324Z]", 
+"MetodoEntrada":"GET", 
+"URLEntrada":"/estoques"
+}
+{
+ "DataHora":"[2025-04-01T18:37:57.451Z]", 
+"MetodoEntrada":"GET", 
+"URLEntrada":"/estoques"
+}
+{
+ "DataHora":"[2025-04-01T18:38:10.506Z]", 
+"MetodoEntrada":"GET", 
+"URLEntrada":"/estoques"
+}
+{
+ "DataHora":"[2025-04-01T18:46:11.258Z]", 
+"MetodoEntrada":"GET", 
+"URLEntrada":"/estoques"
+}
+{
+ "DataHora":"[2025-04-01T18:50:24.569Z]", 
+"MetodoEntrada":"GET", 
+"URLEntrada":"/estoques"
+}
+{
+ "DataHora":"[2025-04-01T18:51:12.167Z]", 
+"MetodoEntrada":"GET", 
+"URLEntrada":"/estoques"
+}

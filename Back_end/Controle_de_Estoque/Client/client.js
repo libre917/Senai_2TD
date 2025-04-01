@@ -1,7 +1,7 @@
 import chalk from "chalk";
 import axios from "axios";
 import inquirer from "inquirer";
-import readline from 'readline-sync';
+import readline from "readline-sync";
 import fs from "fs";
 
 const API_URL = "http://localhost:3000";
@@ -32,25 +32,47 @@ async function exibirDetalhesEstoque(id) {
 }
 
 async function adicionarEstoque() {
-  try{
-let Nome = readline.question('Qual o nome do estoque?\n')
-let quantidade = Number(readline.question('Quantos produtos exite nesse estoque\n'))
-if (isNaN(quantidade)){
-  console.log("A quantidade digitada não é um numero")
-  adicionarEstoque()
-}
-  }catch(error) {
+  try {
+    let ID = Math.floor(Math.random() * 10000);
+    let Nome = readline.question(chalk.yellow(`Qual o nome do estoque?`, "\n"));
+    let quant = Number(
+      readline.question(
+        chalk.yellow(`Quantos produtos exite nesse estoque`, "\n")
+      )
+    );
+    if (isNaN(quant)) {
+      console.log("A quantidade digitada não é um numero\n");
+      adicionarEstoque();
+    } else {
+      fs.readFile("../Server/estoque.json", "utf-8", (err, data) => {
+        if (err) {
+          console.log("ce errou seu primata", err);
+          return;
+        }
+        try {
+          const dados = JSON.parse(data);
+          const dadoNovo = { id: ID, nome: Nome, quantidade: quant };
+          dados.push(dadoNovo);
+          var JsonAtualizado = JSON.stringify(dados);
+          fs.writeFile("../Server/estoque.json", JsonAtualizado, (err) => {
+            if (err) throw err;
+          });
+        } catch (error) {
+          console.log("Erro ao analisar o arquivo JSON: ", error);
+        }
+      });
+    }
+  } catch (error) {
     console.error(
-    chalk.black.bgRed(`Erro ao adcionar estoque `),
-    error.message
-  );
-  return null;
+      chalk.black.bgRed(`Erro ao adicionar estoque `),
+      error.message
+    );
+    return null;
   }
-  
-} 
+}
 
 async function exibirMenu() {
-  console.log('\n')
+  console.log("\n");
   const perguntas = [
     {
       type: "list",
@@ -73,10 +95,14 @@ async function exibirMenu() {
       case "listar":
         const estoques = await listarEstoques();
         if (Array.isArray(estoques) && estoques.length > 0) {
-          console.log(chalk.greenBright('Lista de estoques: '));
-          estoques.forEach(estoque => {
-            console.log(`- ${chalk.blueBright(estoque.id)}: ${chalk.green(estoque.nome)} - quant.: ${chalk.greenBright(estoque.quantidade)}`)
-          })
+          console.log(chalk.greenBright("Lista de estoques: "));
+          estoques.forEach((estoque) => {
+            console.log(
+              `- ${chalk.blueBright(estoque.id)}: ${chalk.green(
+                estoque.nome
+              )} - quant.: ${chalk.greenBright(estoque.quantidade)}`
+            );
+          });
         } else {
           console.log(chalk.yellowBright("Nenhum estoque encontrado."));
         }
@@ -91,20 +117,26 @@ async function exibirMenu() {
           },
         ]);
         const detalhe = await exibirDetalhesEstoque(idResposta.id);
-        if(detalhe) {
-          console.log(chalk.greenBright('Detalhes do estoque'))
-          console.log(`- ${chalk.blueBright(detalhe.id)}: ${chalk.green(detalhe.nome)} - quant.: ${chalk.greenBright(detalhe.quantidade)}`)
-        }else{
-          console.log('Nenhum estoque encontrado')
+        if (detalhe) {
+          console.log(chalk.greenBright("Detalhes do estoque"));
+          console.log(
+            `- ${chalk.blueBright(detalhe.id)}: ${chalk.green(
+              detalhe.nome
+            )} - quant.: ${chalk.greenBright(detalhe.quantidade)}`
+          );
+        } else {
+          console.log("Nenhum estoque encontrado");
         }
         exibirMenu();
         break;
       case "adicionar":
         const adicionar = await adicionarEstoque();
-        console.log(adicionar.Nome)
-        
-        
-        break;  
+        console.log(
+          chalk.blueBright("\n Estoque do produto adicionado com sucesso!")
+        );
+
+        exibirMenu();
+        break;
       case "sair":
         console.log(chalk.yellow("Você escolheu sair"));
         break;
