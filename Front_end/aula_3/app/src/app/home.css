@@ -3,6 +3,7 @@
     text-align: center;
 }
 main{
+    min-height: 80%;
     padding: 10px 0px;
     display: grid;
     justify-content: center;

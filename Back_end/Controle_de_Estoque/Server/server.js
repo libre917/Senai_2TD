@@ -18,6 +18,12 @@ const logger = (req, res, next) => {
   
   app.use(logger);  
 
+
+  app.get('/', (req, res)=>{
+    res.status(200).send("<h1>pagina inicial: controle de estoque")
+  })
+
+
   app.use('/estoques', rotaEstoque)
   app.use('/admin', rotaAdmin)
 

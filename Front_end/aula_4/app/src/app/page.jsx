@@ -27,6 +27,11 @@ export default function Home() {
     <span>{Contador}</span>
     <button type="buttonMenos" onClick={handleDecremnetar}> - </button>
   </div>
+  <div>
+    <button type="button" onClick={handleAcrescentar}> + </button>
+    <span>{Contador}</span>
+    <button type="buttonMenos" onClick={handleDecremnetar}> - </button>
+  </div>
   </>
   );
 }
