@@ -34,9 +34,17 @@ async function exibirDetalhesEstoque(id) {
 async function adicionarEstoque() {
   try{
 let Nome = readline.question('Qual o nome do estoque?\n')
-let quantidade = readline.question('Quantos produtos há nesse estoque\n')
+let quantidade = Number(readline.question('Quantos produtos exite nesse estoque\n'))
+if (isNaN(quantidade)){
+  console.log("A quantidade digitada não é um numero")
+  adicionarEstoque()
+}
   }catch(error) {
-  
+    console.error(
+    chalk.black.bgRed(`Erro ao adcionar estoque `),
+    error.message
+  );
+  return null;
   }
   
 } 
@@ -92,6 +100,9 @@ async function exibirMenu() {
         exibirMenu();
         break;
       case "adicionar":
+        const adicionar = await adicionarEstoque();
+        console.log(adicionar.Nome)
+        
         
         break;  
       case "sair":
