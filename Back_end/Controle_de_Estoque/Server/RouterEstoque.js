@@ -30,7 +30,25 @@ router.get('/:id', (req,res)=>{
 router.post("/", (req, res) => {
     const novoEstoque = req.body;
     console.log("Conteúdo do novo estoque:", novoEstoque);
-    res.status(201).send("\nProduto criado com sucesso!\n");
-  });
+    res.status(201).send("\nEstoque para o Produto criado com sucesso!\n");
+          fs.readFile("estoque.json", "utf-8", (err, data) => {
+            if (err) {
+              console.log("ce errou seu primata", err);
+              return;
+            }
+            try {
+              const dados = JSON.parse(data);
+              const dadoNovo = req.body;
+              dados.push(dadoNovo);
+              var JsonAtualizado = JSON.stringify(dados);
+              fs.writeFile("../Server/estoque.json", JsonAtualizado, (err) => {
+                if (err) throw err;
+              });
+            } catch (error) {
+              console.log("Erro ao analisar o arquivo JSON: ", error);
+            }
+          });
+        }
+  );
 
 module.exports = router;
