@@ -188,3 +188,203 @@
 "MetodoEntrada":"GET", 
 "URLEntrada":"/estoques"
 }
+{
+ "DataHora":"[2025-04-02T02:49:54.240Z]", 
+"MetodoEntrada":"GET", 
+"URLEntrada":"/estoques"
+}
+{
+ "DataHora":"[2025-04-02T02:50:27.050Z]", 
+"MetodoEntrada":"GET", 
+"URLEntrada":"/estoques"
+}
+{
+ "DataHora":"[2025-04-02T02:56:13.428Z]", 
+"MetodoEntrada":"POST", 
+"URLEntrada":"/estoques"
+}
+{
+ "DataHora":"[2025-04-02T02:56:59.388Z]", 
+"MetodoEntrada":"POST", 
+"URLEntrada":"/estoques"
+}
+{
+ "DataHora":"[2025-04-02T03:04:01.693Z]", 
+"MetodoEntrada":"POST", 
+"URLEntrada":"/estoques"
+}
+{
+ "DataHora":"[2025-04-02T03:04:58.660Z]", 
+"MetodoEntrada":"POST", 
+"URLEntrada":"/estoques"
+}
+{
+ "DataHora":"[2025-04-02T03:05:14.286Z]", 
+"MetodoEntrada":"POST", 
+"URLEntrada":"/estoques"
+}
+{
+ "DataHora":"[2025-04-02T03:05:40.975Z]", 
+"MetodoEntrada":"GET", 
+"URLEntrada":"/estoques"
+}
+{
+ "DataHora":"[2025-04-02T03:05:57.921Z]", 
+"MetodoEntrada":"GET", 
+"URLEntrada":"/estoques"
+}
+{
+ "DataHora":"[2025-04-02T03:06:07.592Z]", 
+"MetodoEntrada":"GET", 
+"URLEntrada":"/estoques/1423"
+}
+{
+ "DataHora":"[2025-04-02T03:06:13.723Z]", 
+"MetodoEntrada":"POST", 
+"URLEntrada":"/estoques"
+}
+{
+ "DataHora":"[2025-04-02T03:06:35.318Z]", 
+"MetodoEntrada":"GET", 
+"URLEntrada":"/estoques"
+}
+{
+ "DataHora":"[2025-04-02T03:07:25.752Z]", 
+"MetodoEntrada":"GET", 
+"URLEntrada":"/estoques/"
+}
+{
+ "DataHora":"[2025-04-02T03:07:25.800Z]", 
+"MetodoEntrada":"GET", 
+"URLEntrada":"/favicon.ico"
+}
+{
+ "DataHora":"[2025-04-02T23:41:28.963Z]", 
+"MetodoEntrada":"POST", 
+"URLEntrada":"/estoques"
+}
+{
+ "DataHora":"[2025-04-03T01:06:14.212Z]", 
+"MetodoEntrada":"POST", 
+"URLEntrada":"/estoques"
+}
+{
+ "DataHora":"[2025-04-03T01:07:51.177Z]", 
+"MetodoEntrada":"GET", 
+"URLEntrada":"/estoques"
+}
+{
+ "DataHora":"[2025-04-03T01:08:04.089Z]", 
+"MetodoEntrada":"POST", 
+"URLEntrada":"/estoques"
+}
+{
+ "DataHora":"[2025-04-03T01:10:25.811Z]", 
+"MetodoEntrada":"POST", 
+"URLEntrada":"/estoques"
+}
+{
+ "DataHora":"[2025-04-03T01:10:54.865Z]", 
+"MetodoEntrada":"GET", 
+"URLEntrada":"/estoques"
+}
+{
+ "DataHora":"[2025-04-03T01:11:12.058Z]", 
+"MetodoEntrada":"GET", 
+"URLEntrada":"/estoques"
+}
+{
+ "DataHora":"[2025-04-03T01:11:18.787Z]", 
+"MetodoEntrada":"GET", 
+"URLEntrada":"/estoques/3"
+}
+{
+ "DataHora":"[2025-04-03T01:11:53.946Z]", 
+"MetodoEntrada":"GET", 
+"URLEntrada":"/estoques"
+}
+{
+ "DataHora":"[2025-04-03T01:12:00.132Z]", 
+"MetodoEntrada":"GET", 
+"URLEntrada":"/estoques/2"
+}
+{
+ "DataHora":"[2025-04-03T01:12:26.325Z]", 
+"MetodoEntrada":"POST", 
+"URLEntrada":"/estoques"
+}
+{
+ "DataHora":"[2025-04-03T01:12:38.075Z]", 
+"MetodoEntrada":"POST", 
+"URLEntrada":"/estoques"
+}
+{
+ "DataHora":"[2025-04-03T01:15:15.648Z]", 
+"MetodoEntrada":"POST", 
+"URLEntrada":"/estoques"
+}
+{
+ "DataHora":"[2025-04-03T01:16:42.687Z]", 
+"MetodoEntrada":"POST", 
+"URLEntrada":"/estoques"
+}
+{
+ "DataHora":"[2025-04-03T01:16:42.694Z]", 
+"MetodoEntrada":"POST", 
+"URLEntrada":"/estoques"
+}
+{
+ "DataHora":"[2025-04-03T01:16:58.888Z]", 
+"MetodoEntrada":"POST", 
+"URLEntrada":"/estoques"
+}
+{
+ "DataHora":"[2025-04-03T01:17:23.257Z]", 
+"MetodoEntrada":"POST", 
+"URLEntrada":"/estoques"
+}
+{
+ "DataHora":"[2025-04-03T01:18:08.501Z]", 
+"MetodoEntrada":"POST", 
+"URLEntrada":"/estoques"
+}
+{
+ "DataHora":"[2025-04-03T01:19:31.761Z]", 
+"MetodoEntrada":"POST", 
+"URLEntrada":"/estoques"
+}
+{
+ "DataHora":"[2025-04-03T01:20:18.811Z]", 
+"MetodoEntrada":"POST", 
+"URLEntrada":"/estoques"
+}
+{
+ "DataHora":"[2025-04-03T01:21:45.735Z]", 
+"MetodoEntrada":"GET", 
+"URLEntrada":"/estoques"
+}
+{
+ "DataHora":"[2025-04-03T01:21:45.763Z]", 
+"MetodoEntrada":"GET", 
+"URLEntrada":"/favicon.ico"
+}
+{
+ "DataHora":"[2025-04-03T01:22:01.780Z]", 
+"MetodoEntrada":"GET", 
+"URLEntrada":"/estoques"
+}
+{
+ "DataHora":"[2025-04-03T01:22:14.679Z]", 
+"MetodoEntrada":"GET", 
+"URLEntrada":"/estoques/12"
+}
+{
+ "DataHora":"[2025-04-03T01:23:56.423Z]", 
+"MetodoEntrada":"GET", 
+"URLEntrada":"/estoques"
+}
+{
+ "DataHora":"[2025-04-03T01:24:00.921Z]", 
+"MetodoEntrada":"GET", 
+"URLEntrada":"/estoques/12"
+}

@@ -33,6 +33,7 @@ async function exibirDetalhesEstoque(id) {
 
 async function adicionarEstoque() {
   try {
+   
     let ID = Math.floor(Math.random() * 10000);
     let Nome = readline.question(chalk.yellow(`Qual o nome do estoque?`, "\n"));
     let quant = Number(
@@ -46,22 +47,17 @@ async function adicionarEstoque() {
     } else {
       fs.readFile("../Server/estoque.json", "utf-8", (err, data) => {
         if (err) {
-          console.log("ce errou seu primata", err);
+          console.log("ce errou seu primata", err); 
           return;
         }
-        try {
-          const dados = JSON.parse(data);
-          const dadoNovo = { id: ID, nome: Nome, quantidade: quant };
-          dados.push(dadoNovo);
-          var JsonAtualizado = JSON.stringify(dados);
-          fs.writeFile("../Server/estoque.json", JsonAtualizado, (err) => {
-            if (err) throw err;
-          });
-        } catch (error) {
-          console.log("Erro ao analisar o arquivo JSON: ", error);
-        }
+  
       });
     }
+    const response = await axios.post(`${API_URL}/estoques`,{id: ID, nome: Nome, quantidade: quant });
+    console.log(
+      chalk.blueBright("\n Estoque do produto adicionado com sucesso!")
+    );  
+    return response.data;
   } catch (error) {
     console.error(
       chalk.black.bgRed(`Erro ao adicionar estoque `),
@@ -131,9 +127,7 @@ async function exibirMenu() {
         break;
       case "adicionar":
         const adicionar = await adicionarEstoque();
-        console.log(
-          chalk.blueBright("\n Estoque do produto adicionado com sucesso!")
-        );
+  
 
         exibirMenu();
         break;
