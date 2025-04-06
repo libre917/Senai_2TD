@@ -67,6 +67,42 @@ async function adicionarEstoque() {
   }
 }
 
+
+async function atualizarEstoque() {
+  try {
+  // const Perguntas = [
+  //       {
+  //         type:'input',
+  //         name:'Id',
+  //         message:'Qual a ID do estoque que deseja mudar? '
+  //       },
+  //       {
+  //         type:'input',
+  //         name:'nome',
+  //         message:'Qual o novo nome? '
+  //       },
+  //       {
+  //         type:'input',
+  //         name:'quantidade',
+  //         message:'Qual a quantidade? '
+  //       },
+        
+  //     ]
+  //   const InfoNova = await inquirer.prompt(Perguntas)
+    const response = await axios.put(`${API_URL}/estoques/12`,{id: 12, nome: 'novonome', quantidade: 32 });
+    console.log(
+      chalk.blueBright("\n Estoque do produto atualizado com sucesso!")
+    );  
+    return response.data;
+  } catch (error) {
+    console.error(
+      chalk.black.bgRed(`Erro ao atualizar estoque `),
+      error.message
+    );
+    return null;
+  }
+}
+
 async function exibirMenu() {
   console.log("\n");
   const perguntas = [
@@ -128,8 +164,12 @@ async function exibirMenu() {
       case "adicionar":
         const adicionar = await adicionarEstoque();
   
-
+        break;
         exibirMenu();
+        break;
+      case "atualizar":
+        const atualizar = await atualizarEstoque();
+
         break;
       case "sair":
         console.log(chalk.yellow("Você escolheu sair"));
