@@ -12,7 +12,14 @@ try {
   console.log('Erro ao analisar o estoque', error)
   estoques = [];
 }
-
+const autenticacao = (req, res, next) => {
+  const token = req.headers["authorization"];
+  if (token === "ADMIN") {
+    next();
+  } else {
+    res.status(401).send("Acesso Negado");
+  }
+};
 router.get('/', (req, res) => {
   res.json(estoques);
 })
@@ -27,7 +34,7 @@ router.get('/:id', (req, res) => {
   }
 })
 
-router.post("/", (req, res) => {
+router.post("/",autenticacao, (req, res) => {
   const novoEstoque = req.body;
   console.log("\nConteúdo novo do estoque:", novoEstoque);
   res.status(201).send("\nEstoque para o Produto criado com sucesso!\n");
@@ -50,7 +57,7 @@ router.post("/", (req, res) => {
   });
 }
 );
-router.put('/:id', (req, res) => {
+router.put('/:id',autenticacao, (req, res) => {
   const estoqueAtualizado = req.body;
   console.log('\nInfo inserida:', estoqueAtualizado);
   fs.readFile("estoque.json", "utf8", (err, data) => {
@@ -83,7 +90,7 @@ router.put('/:id', (req, res) => {
   });
 })
 
-router.patch('/:id', (req, res)=>{
+router.patch('/:id',autenticacao, (req, res)=>{
   const estoqueAtualizado = req.body;
   console.log('\nInfo inserida:', estoqueAtualizado);
   fs.readFile("estoque.json", "utf8", (err, data) => {
@@ -113,7 +120,7 @@ router.patch('/:id', (req, res)=>{
   });
 })
 
-router.delete('/:id', (req,res)=>{
+router.delete('/:id',autenticacao, (req,res)=>{
   const estoqueAtual = req.body;
   console.log('Deletando:', estoqueAtual)
   fs.readFile("estoque.json", "utf8", (err, data)=>{

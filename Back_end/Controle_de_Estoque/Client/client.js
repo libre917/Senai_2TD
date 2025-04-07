@@ -33,7 +33,9 @@ async function exibirDetalhesEstoque(id) {
 
 async function adicionarEstoque() {
   try {
-   
+    let Senha = readline.question(
+      chalk.red(`[Acesso restrito]. Qual a Senha?`, "\n")
+    );
     let ID = Math.floor(Math.random() * 10000);
     let Nome = readline.question(chalk.yellow(`Qual o nome do estoque?`, "\n"));
     let quant = Number(
@@ -47,16 +49,19 @@ async function adicionarEstoque() {
     } else {
       fs.readFile("../Server/estoque.json", "utf-8", (err, data) => {
         if (err) {
-          console.log("ce errou seu primata", err); 
+          console.log("ce errou seu primata", err);
           return;
         }
-  
       });
     }
-    const response = await axios.post(`${API_URL}/estoques`,{id: ID, nome: Nome, quantidade: quant });
+    const response = await axios.post(
+      `${API_URL}/estoques`,
+      { id: ID, nome: Nome, quantidade: quant },
+      { headers: { Authorization: `${Senha}` } }
+    );
     console.log(
       chalk.blueBright("\n Estoque do produto adicionado com sucesso!")
-    );  
+    );
     return response.data;
   } catch (error) {
     console.error(
@@ -67,36 +72,71 @@ async function adicionarEstoque() {
   }
 }
 
-
 async function atualizarEstoque() {
   try {
-  // const Perguntas = [
-  //       {
-  //         type:'input',
-  //         name:'Id',
-  //         message:'Qual a ID do estoque que deseja mudar? '
-  //       },
-  //       {
-  //         type:'input',
-  //         name:'nome',
-  //         message:'Qual o novo nome? '
-  //       },
-  //       {
-  //         type:'input',
-  //         name:'quantidade',
-  //         message:'Qual a quantidade? '
-  //       },
-        
-  //     ]
-  //   const InfoNova = await inquirer.prompt(Perguntas)
-    const response = await axios.put(`${API_URL}/estoques/12`,{id: 12, nome: 'novonome', quantidade: 32 });
+    const Perguntas = [
+      {
+        type: "input",
+        name: "Senha",
+        message: "[Acesso restrito] Qual a senha?\n ",
+      },
+      {
+        type: "input",
+        name: "Id",
+        message: "Qual a ID do estoque que deseja mudar?\n ",
+      },
+      {
+        type: "input",
+        name: "nome",
+        message: "Qual o novo nome?\n ",
+      },
+      {
+        type: "input",
+        name: "quantidade",
+        message: "Qual a quantidade?\n ",
+      },
+    ];
+    const Respostas = await inquirer.prompt(Perguntas);
+    const response = await axios.put(`${API_URL}/estoques/${Respostas.Id}`, {
+      id: Respostas.Id,
+      nome: `${Respostas.nome}`,
+      quantidade: Respostas.quantidade,
+    }, { headers: { Authorization: `${Respostas.Senha}` } });
     console.log(
       chalk.blueBright("\n Estoque do produto atualizado com sucesso!")
-    );  
+    );
     return response.data;
   } catch (error) {
     console.error(
       chalk.black.bgRed(`Erro ao atualizar estoque `),
+      error.message
+    );
+    return null;
+  }
+}
+async function deletarEstoque() {
+  try {
+    const Perguntas = [
+      {
+        type: "input",
+        name: "Senha",
+        message: "[Acesso restrito] Qual a senha?\n ",
+      },
+      {
+        type: "input",
+        name: "Id",
+        message: "Qual a ID do estoque que deseja remover?\n ",
+      },
+    ];
+    const Respostas = await inquirer.prompt(Perguntas);
+    const response = await axios.delete(`${API_URL}/estoques/${Respostas.Id}`, { headers: { Authorization: `${Respostas.Senha}` } });
+    console.log(
+      chalk.blueBright("\n Estoque do produto removido!")
+    );
+    return response.data;
+  } catch (error) {
+    console.error(
+      chalk.black.bgRed(`Erro ao remover estoque `),
       error.message
     );
     return null;
@@ -163,13 +203,16 @@ async function exibirMenu() {
         break;
       case "adicionar":
         const adicionar = await adicionarEstoque();
-  
+
         break;
         exibirMenu();
         break;
       case "atualizar":
         const atualizar = await atualizarEstoque();
 
+        break;
+      case "remover":
+        const Deletar = await deletarEstoque()
         break;
       case "sair":
         console.log(chalk.yellow("Você escolheu sair"));
