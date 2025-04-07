@@ -130,8 +130,8 @@ router.delete('/:id',autenticacao, (req,res)=>{
     }
     try{
       const dados = JSON.parse(data);
-      const dadoASerDeletado = req.body.id;
-      const index = dados.findIndex(item => item.id === dadoASerDeletado)
+      const dadoASerDeletado = req.body;
+      const index = dados.findIndex(item => item.id === dadoASerDeletado.id)
       if( index !== -1) {
         dados.splice(index, 1)
         const JsonAtualizado = JSON.stringify(dados)

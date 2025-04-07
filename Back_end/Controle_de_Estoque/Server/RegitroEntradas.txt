@@ -198,3 +198,163 @@
 "MetodoEntrada":"DELETE", 
 "URLEntrada":"/estoques/12"
 }
+{
+ "DataHora":"[2025-04-07T18:22:03.719Z]", 
+"MetodoEntrada":"DELETE", 
+"URLEntrada":"/estoques/6594"
+}
+{
+ "DataHora":"[2025-04-07T18:23:07.321Z]", 
+"MetodoEntrada":"DELETE", 
+"URLEntrada":"/estoques/6594"
+}
+{
+ "DataHora":"[2025-04-07T18:24:07.237Z]", 
+"MetodoEntrada":"DELETE", 
+"URLEntrada":"/estoques/6594"
+}
+{
+ "DataHora":"[2025-04-07T18:24:46.184Z]", 
+"MetodoEntrada":"DELETE", 
+"URLEntrada":"/estoques/11"
+}
+{
+ "DataHora":"[2025-04-07T18:26:18.116Z]", 
+"MetodoEntrada":"PUT", 
+"URLEntrada":"/estoques/1535"
+}
+{
+ "DataHora":"[2025-04-07T18:27:13.047Z]", 
+"MetodoEntrada":"PUT", 
+"URLEntrada":"/estoques/1535"
+}
+{
+ "DataHora":"[2025-04-07T18:28:04.215Z]", 
+"MetodoEntrada":"DELETE", 
+"URLEntrada":"/estoques/1535"
+}
+{
+ "DataHora":"[2025-04-07T18:30:00.387Z]", 
+"MetodoEntrada":"DELETE", 
+"URLEntrada":"/estoques/1535"
+}
+{
+ "DataHora":"[2025-04-07T18:31:03.753Z]", 
+"MetodoEntrada":"DELETE", 
+"URLEntrada":"/estoques/2149"
+}
+{
+ "DataHora":"[2025-04-07T18:33:26.122Z]", 
+"MetodoEntrada":"DELETE", 
+"URLEntrada":"/estoques/6594"
+}
+{
+ "DataHora":"[2025-04-07T18:39:08.131Z]", 
+"MetodoEntrada":"DELETE", 
+"URLEntrada":"/estoques/6594"
+}
+{
+ "DataHora":"[2025-04-07T18:40:00.282Z]", 
+"MetodoEntrada":"DELETE", 
+"URLEntrada":"/estoques/6594"
+}
+{
+ "DataHora":"[2025-04-07T18:40:12.840Z]", 
+"MetodoEntrada":"DELETE", 
+"URLEntrada":"/estoques/2149"
+}
+{
+ "DataHora":"[2025-04-07T18:40:35.210Z]", 
+"MetodoEntrada":"DELETE", 
+"URLEntrada":"/estoques"
+}
+{
+ "DataHora":"[2025-04-07T18:40:42.908Z]", 
+"MetodoEntrada":"DELETE", 
+"URLEntrada":"/estoques/id"
+}
+{
+ "DataHora":"[2025-04-07T18:41:10.651Z]", 
+"MetodoEntrada":"DELETE", 
+"URLEntrada":"/estoques/133"
+}
+{
+ "DataHora":"[2025-04-07T18:42:11.426Z]", 
+"MetodoEntrada":"DELETE", 
+"URLEntrada":"/estoques/11"
+}
+{
+ "DataHora":"[2025-04-07T18:43:59.766Z]", 
+"MetodoEntrada":"DELETE", 
+"URLEntrada":"/estoques/11"
+}
+{
+ "DataHora":"[2025-04-07T18:44:18.320Z]", 
+"MetodoEntrada":"DELETE", 
+"URLEntrada":"/estoques/11"
+}
+{
+ "DataHora":"[2025-04-07T18:45:03.015Z]", 
+"MetodoEntrada":"DELETE", 
+"URLEntrada":"/estoques/11"
+}
+{
+ "DataHora":"[2025-04-07T18:45:29.814Z]", 
+"MetodoEntrada":"DELETE", 
+"URLEntrada":"/estoques/11"
+}
+{
+ "DataHora":"[2025-04-07T18:46:14.295Z]", 
+"MetodoEntrada":"DELETE", 
+"URLEntrada":"/estoques/11"
+}
+{
+ "DataHora":"[2025-04-07T18:50:52.550Z]", 
+"MetodoEntrada":"DELETE", 
+"URLEntrada":"/estoques/11"
+}
+{
+ "DataHora":"[2025-04-07T18:51:24.819Z]", 
+"MetodoEntrada":"DELETE", 
+"URLEntrada":"/estoques/8301"
+}
+{
+ "DataHora":"[2025-04-07T18:53:29.182Z]", 
+"MetodoEntrada":"POST", 
+"URLEntrada":"/estoques"
+}
+{
+ "DataHora":"[2025-04-07T18:53:52.228Z]", 
+"MetodoEntrada":"PUT", 
+"URLEntrada":"/estoques/6738"
+}
+{
+ "DataHora":"[2025-04-07T18:56:20.004Z]", 
+"MetodoEntrada":"POST", 
+"URLEntrada":"/estoques"
+}
+{
+ "DataHora":"[2025-04-07T18:58:00.865Z]", 
+"MetodoEntrada":"PUT", 
+"URLEntrada":"/estoques/1"
+}
+{
+ "DataHora":"[2025-04-07T18:58:17.872Z]", 
+"MetodoEntrada":"DELETE", 
+"URLEntrada":"/estoques/1"
+}
+{
+ "DataHora":"[2025-04-07T19:00:59.267Z]", 
+"MetodoEntrada":"DELETE", 
+"URLEntrada":"/estoques/1"
+}
+{
+ "DataHora":"[2025-04-07T19:11:06.097Z]", 
+"MetodoEntrada":"DELETE", 
+"URLEntrada":"/estoques/1"
+}
+{
+ "DataHora":"[2025-04-07T19:26:34.717Z]", 
+"MetodoEntrada":"DELETE", 
+"URLEntrada":"/estoques/1"
+}

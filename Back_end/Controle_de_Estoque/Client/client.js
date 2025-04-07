@@ -33,31 +33,33 @@ async function exibirDetalhesEstoque(id) {
 
 async function adicionarEstoque() {
   try {
-    let Senha = readline.question(
-      chalk.red(`[Acesso restrito]. Qual a Senha?`, "\n")
-    );
-    let ID = Math.floor(Math.random() * 10000);
-    let Nome = readline.question(chalk.yellow(`Qual o nome do estoque?`, "\n"));
-    let quant = Number(
-      readline.question(
-        chalk.yellow(`Quantos produtos exite nesse estoque`, "\n")
-      )
-    );
-    if (isNaN(quant)) {
-      console.log("A quantidade digitada não é um numero\n");
-      adicionarEstoque();
-    } else {
-      fs.readFile("../Server/estoque.json", "utf-8", (err, data) => {
-        if (err) {
-          console.log("ce errou seu primata", err);
-          return;
-        }
-      });
-    }
+    const Perguntas = [
+      {
+        type: "input",
+        name: "Senha",
+        message: "[Acesso restrito] Qual a senha?\n ",
+      },
+      {
+        type: "input",
+        name: "Id",
+        message: "Qual a ID do estoque que deseja mudar?\n ",
+      },
+      {
+        type: "input",
+        name: "nome",
+        message: "Qual o novo nome?\n ",
+      },
+      {
+        type: "input",
+        name: "quantidade",
+        message: "Qual a quantidade?\n ",
+      },
+    ];
+    const Respostas = await inquirer.prompt(Perguntas);
     const response = await axios.post(
       `${API_URL}/estoques`,
-      { id: ID, nome: Nome, quantidade: quant },
-      { headers: { Authorization: `${Senha}` } }
+      { id: Respostas.Id, nome: Respostas.nome, quantidade: Respostas.quantidade },
+      { headers: { Authorization: `${Respostas.Senha}` } }
     );
     console.log(
       chalk.blueBright("\n Estoque do produto adicionado com sucesso!")
@@ -129,7 +131,7 @@ async function deletarEstoque() {
       },
     ];
     const Respostas = await inquirer.prompt(Perguntas);
-    const response = await axios.delete(`${API_URL}/estoques/${Respostas.Id}`, { headers: { Authorization: `${Respostas.Senha}` } });
+    const response = await axios.delete(`${API_URL}/estoques/${Respostas.Id}`,{id: Respostas.Id} ,{ headers: { Authorization: ` Bearer ${Respostas.Senha}` } });
     console.log(
       chalk.blueBright("\n Estoque do produto removido!")
     );
@@ -204,15 +206,17 @@ async function exibirMenu() {
       case "adicionar":
         const adicionar = await adicionarEstoque();
 
-        break;
         exibirMenu();
         break;
       case "atualizar":
         const atualizar = await atualizarEstoque();
-
+   
+        exibirMenu();
         break;
       case "remover":
         const Deletar = await deletarEstoque()
+
+        exibirMenu();
         break;
       case "sair":
         console.log(chalk.yellow("Você escolheu sair"));
