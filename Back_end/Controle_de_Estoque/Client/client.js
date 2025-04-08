@@ -10,7 +10,7 @@ async function listarEstoques() {
     return response.data;
   } catch (error) {
     console.error(
-      chalk.black.bgRed("Erro ao listar estoques: "),
+      chalk.black.bgRed("Erro ao listar estoque: "),
       error.message
     );
   }
@@ -22,7 +22,7 @@ async function exibirDetalhesEstoque(id) {
     return response.data;
   } catch (error) {
     console.error(
-      chalk.black.bgRed(`Erro ao exibir detalhes do estoque com ID: ${id} `),
+      chalk.black.bgRed(`Erro ao exibir detalhes do ID: ${id} `),
       error.message
     );
     return null;
@@ -33,14 +33,15 @@ async function adicionarEstoque() {
   try {
     const Perguntas = [
       {
-        type: "input",
+        type: "password",
         name: "Senha",
-        message: "[Acesso restrito] Qual a senha?\n ",
+        message:  chalk.yellow("[Acesso restrito] Qual a senha?\n "),
+        mask: "*" 
       },
       {
         type: "input",
         name: "nome",
-        message: "Qual o nome do produto do estoque?\n ",
+        message: "Qual o nome do produto?\n ",
       },
       {
         type: "input",
@@ -49,8 +50,9 @@ async function adicionarEstoque() {
       },
     ];  
         const DadosJSON = await axios.get(`${API_URL}/estoques`);
+    
         const IdAnterior = DadosJSON.data[DadosJSON.data.length - 1];
-        const ID = IdAnterior ? IdAnterior.id + 1 : 1; 
+        const ID = IdAnterior ? parseInt(IdAnterior.id) + 1 : 1; 
     
     const Respostas = await inquirer.prompt(Perguntas);
     const response = await axios.post(
@@ -59,12 +61,12 @@ async function adicionarEstoque() {
       { headers: { Authorization: `${Respostas.Senha}` } }
     );
     console.log(
-      chalk.blueBright("\n Estoque do produto adicionado com sucesso!")
+      chalk.blueBright("\n Produto adicionado ao estoque")
     );
     return response.data;
   } catch (error) {
     console.error(
-      chalk.black.bgRed(`Erro ao adicionar estoque `),
+      chalk.black.bgRed(`Erro ao adicionar produto `),
       error.message
     );
     return null;
@@ -75,19 +77,20 @@ async function atualizarEstoque() {
   try {
     const Perguntas = [
       {
-        type: "input",
+        type: "password",
         name: "Senha",
-        message: "[Acesso restrito] Qual a senha?\n ",
+        message:  chalk.yellow("[Acesso restrito] Qual a senha?\n "),
+        mask: "*" 
       },
       {
         type: "input",
         name: "Id",
-        message: "Qual a ID do estoque que deseja mudar?\n ",
+        message: "ID do produto que deseja alterar?\n ",
       },
       {
         type: "input",
         name: "nome",
-        message: "Qual o novo nome?\n ",
+        message: "Qual o nome?\n ",
       },
       {
         type: "input",
@@ -102,12 +105,12 @@ async function atualizarEstoque() {
       quantidade: Respostas.quantidade,
     }, { headers: { Authorization: `${Respostas.Senha}` } });
     console.log(
-      chalk.blueBright("\n Estoque do produto atualizado com sucesso!")
+      chalk.blueBright("\n Info atualizada com sucesso")
     );
     return response.data;
   } catch (error) {
     console.error(
-      chalk.black.bgRed(`Erro ao atualizar estoque `),
+      chalk.black.bgRed(`Erro ao atualizar `),
       error.message
     );
     return null;
@@ -117,25 +120,26 @@ async function deletarEstoque() {
   try {
     const Perguntas = [
       {
-        type: "input",
+        type: "password",
         name: "Senha",
-        message: "[Acesso restrito] Qual a senha?\n ",
+        message: chalk.yellow("[Acesso restrito] Qual a senha?\n "),
+        mask: "*" 
       },
       {
         type: "input",
         name: "Id",
-        message: "Qual a ID do estoque que deseja remover?\n ",
+        message: "Qual produto que deseja remover? (Digite a ID)\n ",
       },
     ];
     const Respostas = await inquirer.prompt(Perguntas);
     const response = await axios.delete(`${API_URL}/estoques/${Respostas.Id}`,{ headers: { Authorization: `${Respostas.Senha}` } });
     console.log(
-      chalk.blueBright("\n Estoque do produto removido!")
+      chalk.blueBright("\n Produto removido")
     );
     return response.data;
   } catch (error) {
     console.error(
-      chalk.black.bgRed(`Erro ao remover estoque `),
+      chalk.black.bgRed(`Erro ao remover `),
       error.message
     );
     return null;
@@ -150,12 +154,12 @@ async function exibirMenu() {
       name: "opcao",
       message: chalk.yellow("Escolha uma opção: "),
       choices: [
-        { name: chalk.green("Listar estoques"), value: "listar" },
-        { name: chalk.green("Exibir detalhes do estoque"), value: "exibir" },
-        { name: chalk.green("Adicionar um estoque"), value: "adicionar" },
-        { name: chalk.green("Atualizar um estoque"), value: "atualizar" },
-        { name: chalk.green("Remover um estoque"), value: "remover" },
-        { name: chalk.red("Sair"), value: "sair" },
+        { name: chalk.greenBright("[--Listar estoques--]"), value: "listar" },
+        { name: chalk.greenBright("[--Exibir detalhes do estoque--]"), value: "exibir" },
+        { name: chalk.greenBright("[--Adicionar um estoque--]"), value: "adicionar" },
+        { name: chalk.greenBright("[--Atualizar um estoque--]"), value: "atualizar" },
+        { name: chalk.greenBright("[--Remover um estoque--]"), value: "remover" },
+        { name: chalk.redBright("[--Sair--]"), value: "sair" },
       ],
     },
   ];
@@ -166,12 +170,12 @@ async function exibirMenu() {
       case "listar":
         const estoques = await listarEstoques();
         if (Array.isArray(estoques) && estoques.length > 0) {
-          console.log(chalk.greenBright("Lista de estoques: "));
+          console.log(chalk.greenBright("Estoque:\n "));
           estoques.forEach((estoque) => {
             console.log(
-              `- ${chalk.blueBright(estoque.id)}: ${chalk.green(
+              `- ${chalk.blueBright(`[${estoque.id}]`)} -- ${chalk.cyan(
                 estoque.nome
-              )} - quant.: ${chalk.greenBright(estoque.quantidade)}`
+              )} -- Quantidade: ${chalk.cyan(estoque.quantidade)}`
             );
           });
         } else {
@@ -184,17 +188,18 @@ async function exibirMenu() {
           {
             type: "input",
             name: "id",
-            message: chalk.blue("Digite o ID do estoque: "),
+            message: chalk.blue("Digite o ID: "),
           },
         ]);
         const detalhe = await exibirDetalhesEstoque(idResposta.id);
         if (detalhe) {
-          console.log(chalk.greenBright("Detalhes do estoque"));
+          console.log(chalk.greenBright("Detalhes:\n "));
           console.log(
-            `- ${chalk.blueBright(detalhe.id)}: ${chalk.green(
+            `- ${chalk.blueBright(`[${detalhe.id}]`)} -- ${chalk.cyan(
               detalhe.nome
-            )} - quant.: ${chalk.greenBright(detalhe.quantidade)}`
+            )} -- Quantidade: ${chalk.cyan(detalhe.quantidade)}`
           );
+        ;
         } else {
           console.log("Nenhum estoque encontrado");
         }
@@ -216,7 +221,7 @@ async function exibirMenu() {
         exibirMenu();
         break;
       case "sair":
-        console.log(chalk.yellow("Você escolheu sair"));
+        console.log(chalk.yellow("\n--Você escolheu sair--"));
         break;
     }
   } catch (error) {

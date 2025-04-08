@@ -26,7 +26,7 @@ router.get('/', (req, res) => {
 
 router.get('/:id', (req, res) => {
   const id = parseInt(req.params.id);
-  const estoque = estoques.find(p => p.id === id)
+  const estoque = estoques.find(p => p.id == id)
   if (estoque) {
     res.json(estoque)
   } else {
@@ -36,11 +36,12 @@ router.get('/:id', (req, res) => {
 
 router.post("/",autenticacao, (req, res) => {
   const novoEstoque = req.body;
-  console.log("\nConteúdo novo do estoque:", novoEstoque);
-  res.status(201).send("\nEstoque para o Produto criado com sucesso!\n");
+  console.log("\nConteúdo novo no estoque:", novoEstoque);
+  res.status(201).send("\nProduto adicionado com sucesso!\n");
   fs.readFile("estoque.json", "utf8", (err, data) => {
     if (err) {
       console.log("Erro", err);
+      res.status(500).send("Erro interno do servidor");
       return;
     }
     try {
@@ -63,6 +64,7 @@ router.put('/:id',autenticacao, (req, res) => {
   fs.readFile("estoque.json", "utf8", (err, data) => {
     if (err) {
       console.log("Erro", err);
+      res.status(500).send("Erro interno do servidor");
       return;
     }
     try {
@@ -72,7 +74,7 @@ router.put('/:id',autenticacao, (req, res) => {
           console.log('Todos os dados devem ser alterados')
           res.status(400).send('Erro: Dados fornecidos incompletos, todos os dados devem ser alterados')
         }
-        const index = dados.findIndex(item => item.id === dadoAtualizado.id)
+        const index = dados.findIndex(item => item.id == dadoAtualizado.id)
         if (index !== -1) {
           dados[index] = { ...dados[index], ...dadoAtualizado }; 
           const JsonAtualizado = JSON.stringify(dados);
@@ -82,7 +84,7 @@ router.put('/:id',autenticacao, (req, res) => {
             res.status(200).send('\nEstoque atualizado com sucesso!\n');
           });
         } else {
-          console.log("Erro: Item com o ID fornecido não encontrado.");
+          console.log("Erro: ID fornecido não encontrado.");
         }
       } catch (error) {
         console.log("Erro ao analisar o estoque: ", error);
@@ -96,22 +98,23 @@ router.patch('/:id',autenticacao, (req, res)=>{
   fs.readFile("estoque.json", "utf8", (err, data) => {
     if (err) {
       console.log("Erro", err);
+      res.status(500).send("Erro interno do servidor");
       return;
     }
     try {
         const dados = JSON.parse(data);
         const dadoAtualizado = req.body;
-        const index = dados.findIndex(item => item.id === dadoAtualizado.id)
+        const index = dados.findIndex(item => item.id == dadoAtualizado.id)
         if (index !== -1) {
           dados[index] = { ...dados[index], ...dadoAtualizado }; 
           const JsonAtualizado = JSON.stringify(dados);
           fs.writeFile("../Server/estoque.json", JsonAtualizado, (err) => {
             if (err) throw err;
             console.log("Dado(s) atualizados com sucesso!");
-            res.status(200).send('\nEstoque atualizado com sucesso!\n');
+            res.status(200).send('\nDado(s) atualizado(s) com sucesso!\n');
           });
         } else {
-          console.log("Erro: Item com o ID fornecido não encontrado.");
+          console.log("Erro: ID fornecido não encontrado.");
           res.status(400).send('Erro: ID não existente')
         }
       } catch (error) {
@@ -124,7 +127,7 @@ router.delete('/:id', autenticacao, (req, res) => {
   console.log('Deletando:', id);
   fs.readFile("estoque.json", "utf8", (err, data) => {
     if (err) {
-      console.error("Erro ao ler o arquivo", err);
+      console.error("Erro", err);
       res.status(500).send("Erro interno do servidor");
       return;
     }
