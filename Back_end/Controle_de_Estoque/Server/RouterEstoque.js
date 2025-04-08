@@ -119,36 +119,37 @@ router.patch('/:id',autenticacao, (req, res)=>{
       }
   });
 })
-
-router.delete('/:id',autenticacao, (req,res)=>{
-  const estoqueAtual = req.body;
-  console.log('Deletando:', estoqueAtual)
-  fs.readFile("estoque.json", "utf8", (err, data)=>{
-    if (err){
-      console.error("Erro", err)
+router.delete('/:id', autenticacao, (req, res) => {
+  const id = parseInt(req.params.id); // Captura o ID da URL
+  console.log('Deletando:', id);
+  fs.readFile("estoque.json", "utf8", (err, data) => {
+    if (err) {
+      console.error("Erro ao ler o arquivo", err);
+      res.status(500).send("Erro interno do servidor");
       return;
     }
-    try{
+    try {
       const dados = JSON.parse(data);
-      const dadoASerDeletado = req.body;
-      const index = dados.findIndex(item => item.id === dadoASerDeletado.id)
-      if( index !== -1) {
-        dados.splice(index, 1)
-        const JsonAtualizado = JSON.stringify(dados)
-        fs.writeFile("../Server/estoque.json", JsonAtualizado, (err) => {
+      const index = dados.findIndex(item => item.id == id);
+      if (index !== -1) {
+        dados.splice(index, 1); 
+        const JsonAtualizado = JSON.stringify(dados);
+        fs.writeFile("estoque.json", JsonAtualizado, (err) => {
           if (err) throw err;
           console.log("Estoque deletado com sucesso");
-          res.status(200).send('\nRemoção de estoque bem-sucedida!\n');
+          res.status(200).send("Remoção de estoque bem-sucedida!");
         });
       } else {
         console.log("Erro: Item com o ID fornecido não encontrado.");
-        res.status(400).send('Erro: ID não existente')
+        res.status(404).send("Erro: ID não existente");
       }
     } catch (error) {
       console.log("Erro ao analisar o estoque: ", error);
+      res.status(500).send("Erro interno do servidor");
     }
-  } )
-})
+  });
+});
+
 router.options("/", (req, res) => {
   res.header("allow", "GET, OPTIONS, POST");
   res.status(204).send();

@@ -1,8 +1,6 @@
 import chalk from "chalk";
 import axios from "axios";
 import inquirer from "inquirer";
-import readline from "readline-sync";
-import fs from "fs";
 
 const API_URL = "http://localhost:3000";
 
@@ -41,24 +39,23 @@ async function adicionarEstoque() {
       },
       {
         type: "input",
-        name: "Id",
-        message: "Qual a ID do estoque que deseja mudar?\n ",
-      },
-      {
-        type: "input",
         name: "nome",
-        message: "Qual o novo nome?\n ",
+        message: "Qual o nome do produto do estoque?\n ",
       },
       {
         type: "input",
         name: "quantidade",
         message: "Qual a quantidade?\n ",
       },
-    ];
+    ];  
+        const DadosJSON = await axios.get(`${API_URL}/estoques`);
+        const IdAnterior = DadosJSON.data[DadosJSON.data.length - 1];
+        const ID = IdAnterior ? IdAnterior.id + 1 : 1; 
+    
     const Respostas = await inquirer.prompt(Perguntas);
     const response = await axios.post(
       `${API_URL}/estoques`,
-      { id: Respostas.Id, nome: Respostas.nome, quantidade: Respostas.quantidade },
+      { id: ID, nome: Respostas.nome, quantidade: Respostas.quantidade },
       { headers: { Authorization: `${Respostas.Senha}` } }
     );
     console.log(
@@ -131,7 +128,7 @@ async function deletarEstoque() {
       },
     ];
     const Respostas = await inquirer.prompt(Perguntas);
-    const response = await axios.delete(`${API_URL}/estoques/${Respostas.Id}`,{id: Respostas.Id} ,{ headers: { Authorization: ` Bearer ${Respostas.Senha}` } });
+    const response = await axios.delete(`${API_URL}/estoques/${Respostas.Id}`,{ headers: { Authorization: `${Respostas.Senha}` } });
     console.log(
       chalk.blueBright("\n Estoque do produto removido!")
     );
