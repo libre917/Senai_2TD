@@ -38,12 +38,16 @@ drop table Tabela_3;
 insert into Tabela_3 (ID_2, ID_1, Numero_aleatorio)
 values
 (1,1,100),
-(2,2,200),
+(10,2,200),
 (3,3,300),
-(4,4,400),
+(4,50,400),
 (5,5,500);
 
 select Tabela_1.nome As Nome, Tabela_2.nome AS Sobrenome,Tabela_3.Numero_aleatorio
 from Tabela_3
-INNER JOIN Tabela_1 ON Tabela_3.ID_1 = Tabela_1.ID_1
-INNER JOIN Tabela_2 ON Tabela_3.ID_2 = Tabela_2.ID_2;
+cross JOIN Tabela_1 ON Tabela_3.ID_1 = Tabela_1.ID_1
+cross JOIN Tabela_2 ON Tabela_3.ID_2 = Tabela_2.ID_2;
+
+select Tabela_1.nome As Nome, Tabela_2.nome AS Sobrenome
+from Tabela_1
+cross join Tabela_2;
