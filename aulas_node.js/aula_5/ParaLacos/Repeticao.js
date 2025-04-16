@@ -1,7 +1,10 @@
 const readline = require("readline-sync");
 
-const num = readline.question('Digite um numero: ')
+let num = readline.question('Digite um numero: ')
+const rep = readline.question('Quantas repeticoes: ')
 
-for (i = 0; i < num; i++){
-    console.log(i)
+
+for (i = 1; i <= rep; i++){
+    console.log(e = (1+1/num)**num)
+    num++
 }
