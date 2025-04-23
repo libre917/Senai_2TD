@@ -123,7 +123,7 @@ router.patch('/:id',autenticacao, (req, res)=>{
   });
 })
 router.delete('/:id', autenticacao, (req, res) => {
-  const id = parseInt(req.params.id); // Captura o ID da URL
+  const id = parseInt(req.params.id);
   console.log('Deletando:', id);
   fs.readFile("estoque.json", "utf8", (err, data) => {
     if (err) {

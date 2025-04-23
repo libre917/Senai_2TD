@@ -62,4 +62,5 @@ value
 (4,4,4,35.00),
 (5,5,5,35.00);
 
-select * from cliente;
+select * from cliente
+where id = "1"

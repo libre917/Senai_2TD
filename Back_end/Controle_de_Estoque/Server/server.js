@@ -31,3 +31,5 @@ app.use('/estoques', rotaEstoque)
 app.listen(port, () => {
   console.log(`Servidor rodando em http://localhost:${port}`)
 })
+
+console.log(chalk.bgRed('oi'))
