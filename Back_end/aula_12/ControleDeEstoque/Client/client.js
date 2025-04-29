@@ -2,6 +2,7 @@ import chalk from "chalk";
 import axios from "axios";
 import inquirer from "inquirer";
 
+
 const API_URL = "http://localhost:3000";
 
 async function listarEstoques() {

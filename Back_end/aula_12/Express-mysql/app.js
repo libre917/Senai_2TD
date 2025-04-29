@@ -62,10 +62,11 @@ app.put("/Clientes/:id", async(req,res)=>{
     }
 })
 app.delete("/Clientes/:id", async ( req,res)=>{
-    const {id} = req.body
+    const id = req.body
+    console.log('Deletando:', id);
     try {
         const [result] = await db.query(
-            'DELETE FROM cliente WHERE id = ?', [id]
+            'DELETE FROM cliente WHERE id = ?', id
         )
         if(result.affectedRows > 0){
             res.status(204).send();

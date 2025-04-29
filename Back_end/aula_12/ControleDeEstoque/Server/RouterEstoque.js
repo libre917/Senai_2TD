@@ -1,7 +1,7 @@
 const express = require('express');
 const fs = require('fs')
 const router = express.Router();
-
+const db = require("../DB");
 
 
 let estoques = [];
@@ -20,137 +20,102 @@ const autenticacao = (req, res, next) => {
     res.status(401).send("Acesso Negado");
   }
 };
-router.get('/', (req, res) => {
-  res.json(estoques);
-})
-
-router.get('/:id', (req, res) => {
-  const id = parseInt(req.params.id);
-  const estoque = estoques.find(p => p.id == id)
-  if (estoque) {
-    res.json(estoque)
-  } else {
-    res.status(404).send('estoque não encontrado')
+router.get('/', async (req, res) => {
+  try {
+    const [rows] = await db.query("SELECT *FROM Estoque");
+    res.json(rows);
+  } catch (err) {
+    console.error(err);
   }
 })
 
-router.post("/",autenticacao, (req, res) => {
-  const novoEstoque = req.body;
-  console.log("\nConteúdo novo no estoque:", novoEstoque);
-  res.status(201).send("\nProduto adicionado com sucesso!\n");
-  fs.readFile("estoque.json", "utf8", (err, data) => {
-    if (err) {
-      console.log("Erro", err);
-      res.status(500).send("Erro interno do servidor");
-      return;
+router.get('/:id', async (req, res) => {
+  try {
+    const id = req.params.id;
+
+    const [rows] = await db.query(`SELECT * FROM Estoque WHERE id = ?`, id);
+    if (rows.length < 1) {
+      res.status(404).send("Erro: Cliente não encontrado ");
     }
-    try {
-      const dados = JSON.parse(data);
-      const dadoNovo = req.body;
-      dados.push(dadoNovo);
-      var JsonAtualizado = JSON.stringify(dados);
-      fs.writeFile("../Server/estoque.json", JsonAtualizado, (err) => {
-        if (err) throw err;
-      });
-    } catch (error) {
-      console.log("Erro ao analisar o estoque: ", error);
-    }
-  });
+    res.json(rows[0]);
+  } catch (err) {
+    console.error(err);
+    res.status(500).send("Erro ao obter cliente");
+  }
+})
+
+router.post("/",autenticacao, async (req, res) => {
+  const {nome, quantidade} = req.body;
+  console.log("\nConteúdo novo no estoque: Nome do Item:", nome,'\nQuantidade:', quantidade);
+  try {
+    const [result] = await db.query(
+      "INSERT INTO Estoque (nome, quantidade) VALUES (?,?) ",
+      [nome, quantidade]
+    );
+    res.status(201).json({ id: result.insertId, nome, quantidade });
+  } catch (err) {
+    console.error(err);
+    res.status(500).send("Erro ao adicionar cliente");
+  }
 }
 );
-router.put('/:id',autenticacao, (req, res) => {
-  const estoqueAtualizado = req.body;
-  console.log('\nInfo inserida:', estoqueAtualizado);
-  fs.readFile("estoque.json", "utf8", (err, data) => {
-    if (err) {
-      console.log("Erro", err);
-      res.status(500).send("Erro interno do servidor");
-      return;
-    }
-    try {
-        const dados = JSON.parse(data);
-        const dadoAtualizado = req.body;
-        if( dadoAtualizado.id == null && dadoAtualizado.nome == null && dadoAtualizado.quantidade == null){
-          console.log('Todos os dados devem ser alterados')
-          res.status(400).send('Erro: Dados fornecidos incompletos, todos os dados devem ser alterados')
-        }
-        const index = dados.findIndex(item => item.id == dadoAtualizado.id)
-        if (index !== -1) {
-          dados[index] = { ...dados[index], ...dadoAtualizado }; 
-          const JsonAtualizado = JSON.stringify(dados);
-          fs.writeFile("../Server/estoque.json", JsonAtualizado, (err) => {
-            if (err) throw err;
-            console.log("Dados atualizados com sucesso!");
-            res.status(200).send('\nEstoque atualizado com sucesso!\n');
-          });
-        } else {
-          console.log("Erro: ID fornecido não encontrado.");
-        }
-      } catch (error) {
-        console.log("Erro ao analisar o estoque: ", error);
-      }
-  });
+router.put('/:id',autenticacao, async (req, res) => {
+  const {nome, quantidade, id} = req.body;
+  console.log('\nInfo inserida:', nome, quantidade, id);
+  try {
+    const [result] = await 
+    db.query(
+      'UPDATE Estoque SET nome = ?,quantidade = ? where id = ?  ',
+      [nome, quantidade, id]
+    );
+  if(result.affectedRows > 0){
+    res.status(201).json({ id: id, nome, quantidade });
+  } else{
+    res.status(404).send('Erro');
+  }
+} catch (err) {
+    console.error(err);
+    res.status(500).send("Erro ao atualizar cliente");
+}
+ 
 })
 
 router.patch('/:id',autenticacao, (req, res)=>{
-  const estoqueAtualizado = req.body;
-  console.log('\nInfo inserida:', estoqueAtualizado);
-  fs.readFile("estoque.json", "utf8", (err, data) => {
-    if (err) {
-      console.log("Erro", err);
-      res.status(500).send("Erro interno do servidor");
-      return;
-    }
-    try {
-        const dados = JSON.parse(data);
-        const dadoAtualizado = req.body;
-        const index = dados.findIndex(item => item.id == dadoAtualizado.id)
-        if (index !== -1) {
-          dados[index] = { ...dados[index], ...dadoAtualizado }; 
-          const JsonAtualizado = JSON.stringify(dados);
-          fs.writeFile("../Server/estoque.json", JsonAtualizado, (err) => {
-            if (err) throw err;
-            console.log("Dado(s) atualizados com sucesso!");
-            res.status(200).send('\nDado(s) atualizado(s) com sucesso!\n');
-          });
-        } else {
-          console.log("Erro: ID fornecido não encontrado.");
-          res.status(400).send('Erro: ID não existente')
-        }
-      } catch (error) {
-        console.log("Erro ao analisar o estoque: ", error);
-      }
-  });
+  const {nome, quantidade, id} = req.body;
+  console.log('\nInfo inserida:', nome, quantidade, id);
+  try {
+    const [result] = await 
+    db.query(
+      'UPDATE Estoque SET nome = ?,quantidade = ? where id = ?  ',
+      [nome, quantidade, id]
+    );
+  if(result.affectedRows > 0){
+    res.status(201).json({ id: id, nome, quantidade });
+  } else{
+    res.status(404).send('Erro');
+  }
+} catch (err) {
+    console.error(err);
+    res.status(500).send("Erro ao atualizar cliente");
+}
+ 
 })
-router.delete('/:id', autenticacao, (req, res) => {
+router.delete('/:id', autenticacao, async (req, res) => {
   const id = parseInt(req.params.id);
   console.log('Deletando:', id);
-  fs.readFile("estoque.json", "utf8", (err, data) => {
-    if (err) {
-      console.error("Erro", err);
-      res.status(500).send("Erro interno do servidor");
-      return;
-    }
-    try {
-      const dados = JSON.parse(data);
-      const index = dados.findIndex(item => item.id == id);
-      if (index !== -1) {
-        dados.splice(index, 1); 
-        const JsonAtualizado = JSON.stringify(dados);
-        fs.writeFile("estoque.json", JsonAtualizado, (err) => {
-          if (err) throw err;
-          console.log("Estoque deletado com sucesso");
-          res.status(200).send("Remoção de estoque bem-sucedida!");
-        });
-      } else {
-        console.log("Erro: Item com o ID fornecido não encontrado.");
-        res.status(404).send("Erro: ID não existente");
-      }
-    } catch (error) {
-      console.log("Erro ao analisar o estoque: ", error);
-      res.status(500).send("Erro interno do servidor");
-    }
-  });
+  try {
+      const [result] = await db.query(
+          'DELETE FROM Estoque WHERE id = ?', id
+      )
+      if(result.affectedRows > 0){
+          res.status(204).send();
+        } else{
+          res.status(404).send('Erro');
+        }
+  } catch(err){
+      console.error(err);
+      res.status(500).send("Erro ao obter cliente");
+  }
 });
 
 router.options("/", (req, res) => {
