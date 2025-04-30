@@ -7,4 +7,3 @@ create table Estoque (
  quantidade int
  );
  
- 
