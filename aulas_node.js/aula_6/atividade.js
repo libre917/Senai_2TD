@@ -17,7 +17,7 @@ function Pergunta() {
   }
   if (resposta == "n") {
    Registros.forEach(element => {
-    console.log('\nNome:',element[0]z,'\nTelefone:',element[1], '\nEstado:', element[2])
+    console.log('\nNome:',element[0],'\nTelefone:',element[1], '\nEstado:', element[2])
    });
 
   }
